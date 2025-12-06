@@ -1,108 +1,91 @@
-// ========== MOBILE MENU ==========
+// MENU MOBILE
 const mobileToggle = document.getElementById('mobileToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 
-mobileToggle.addEventListener('click', () => {
-  mobileMenu.classList.toggle('active');
-  const icon = mobileToggle.querySelector('i');
-  icon.classList.toggle('bi-list');
-  icon.classList.toggle('bi-x');
-});
+if (mobileToggle) {
+  mobileToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    const icon = mobileToggle.querySelector('i');
+    icon.classList.toggle('bi-list');
+    icon.classList.toggle('bi-x');
+  });
+}
 
 function closeMobileMenu() {
   mobileMenu.classList.remove('active');
-  const icon = mobileToggle.querySelector('i');
-  icon.classList.add('bi-list');
-  icon.classList.remove('bi-x');
+  mobileToggle.querySelector('i').className = 'bi bi-list';
 }
 
-// ========== HEADER SCROLL ==========
+// HEADER SCROLL
 const header = document.getElementById('header');
-let lastScroll = 0;
-
 window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-  if (currentScroll > 100) {
-    header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
   } else {
-    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+    header.classList.remove('scrolled');
   }
-  lastScroll = currentScroll;
 });
 
-// ========== ITINERARY TABS ==========
+// TABS (Roteiro e Preços)
 function showItinerary(destination) {
-  // Remove active from all tabs
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.itinerary-content').forEach(content => content.classList.remove('active'));
-  
-  // Add active to clicked tab
   event.target.classList.add('active');
+  
+  document.querySelectorAll('.itinerary-container').forEach(div => div.classList.remove('active'));
   document.getElementById(destination + '-itinerary').classList.add('active');
 }
 
-// ========== DAY TOGGLE ==========
-function toggleDay(btn) {
-  const description = btn.parentElement.querySelector('.day-description');
-  description.classList.toggle('show');
-  btn.textContent = description.classList.contains('show') ? 'Ver menos' : 'Ver mais detalhes';
-}
-
-// ========== PRICING TABS ==========
 function showPricing(tab) {
-  document.querySelectorAll('.pricing-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.pricing-content').forEach(c => c.classList.remove('active'));
-  
+  document.querySelectorAll('.pricing-tab').forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
+  
+  document.querySelectorAll('.pricing-display').forEach(div => div.classList.remove('active'));
   document.getElementById('pricing-' + tab).classList.add('active');
 }
 
-// ========== FAQ ACCORDION ==========
-function toggleFaq(btn) {
-  const faqItem = btn.parentElement;
-  const wasActive = faqItem.classList.contains('active');
-  
-  // Close all
-  document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
-  
-  // Open clicked if wasn't active
-  if (!wasActive) {
-    faqItem.classList.add('active');
-  }
+// TOGGLES (Dia a Dia)
+function toggleDay(btn) {
+  const desc = btn.previousElementSibling;
+  desc.classList.toggle('show');
+  btn.textContent = desc.classList.contains('show') ? 'Ocultar detalhes' : 'Expandir detalhes';
 }
 
-// ========== SMOOTH SCROLL ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// ACCORDION (FAQ)
+function toggleAccordion(btn) {
+  const body = btn.nextElementSibling;
+  body.classList.toggle('active');
+  const icon = btn.querySelector('i');
+  icon.classList.toggle('bi-plus');
+  icon.classList.toggle('bi-dash');
+}
+
+// ANO ATUAL
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// UTM TRACKING
+let prefix = ["wa.me", "whatsapp.com"];
+function getParams() {
+    let t = "";
+    let url = new URL(window.location.href);
+    let params = new URLSearchParams(url.search);
+    
+    if (params.toString()) {
+        t = "?" + params.toString();
     }
-  });
-});
+    return t;
+}
 
-// ========== REVEAL ON SCROLL ==========
-const revealElements = document.querySelectorAll('.destination-card, .included-card, .review-card, .step-card');
-
-const revealOnScroll = () => {
-  revealElements.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-    if (elementTop < windowHeight - 100) {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
+(function() {
+    let params = getParams();
+    if (params) {
+        document.querySelectorAll("a").forEach(function(link) {
+            prefix.forEach(p => {
+                if (link.href.includes(p)) {
+                    link.href += params;
+                }
+            });
+        });
     }
-  });
-};
+})();
 
-revealElements.forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(30px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-});
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-
-console.log('🌎 Mutua Xperience - Site carregado!');
+console.log("Mutua Xperience - Premium Loaded 🌎");
