@@ -1,585 +1,1315 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mutua Xperience | Expedições Peru & Guatemala 2026</title>
-  <meta name="description" content="Expedições em pequenos grupos para Peru e Guatemala. Experiências transformadoras, roteiros exclusivos e máximo 18 pessoas.">
-  <meta name="theme-color" content="#0F172A">
+  <title>Expedições 2026 - Guatemala, Peru & Tailândia | Viagens em Grupo</title>
+  <meta name="description" content="Expedições exclusivas em grupo para Guatemala, Peru e Tailândia em 2026. Máximo 18 pessoas. Experiências transformadoras com Montgomery Abientar.">
+  <meta name="theme-color" content="#0a0a0b">
   
-  <!-- Fonts (Iguais da Referência) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
-  <!-- Icons -->
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   
-  <!-- CSS -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 
 <body>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/message/YZASP7OM735MO1" target="_blank" class="whatsapp-float">
-  <i class="bi bi-whatsapp"></i>
-</a>
+  <!-- ============================================= -->
+  <!-- SCROLL PROGRESS BAR -->
+  <!-- ============================================= -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- HEADER -->
-<header class="header" id="header">
-  <div class="header-container">
-    <a href="#" class="logo">
-      <span class="logo-text">MUTUA<span class="accent">XPERIENCE</span></span>
-    </a>
-    
-    <nav class="nav-menu" id="navMenu">
-      <a href="#destinos">Destinos</a>
-      <a href="#roteiro">Roteiro</a>
-      <a href="#incluso">Incluso</a>
-      <a href="#valor">Valor</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    
-    <a href="#valor" class="header-cta">Reservar Vaga</a>
-    
-    <button class="mobile-toggle" id="mobileToggle">
-      <i class="bi bi-list"></i>
-    </button>
-  </div>
-</header>
+  <!-- ============================================= -->
+  <!-- CURSOR GLOW (Mouse Tracking Effect) -->
+  <!-- ============================================= -->
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#destinos" onclick="closeMobileMenu()">Destinos</a>
-  <a href="#roteiro" onclick="closeMobileMenu()">Roteiro</a>
-  <a href="#incluso" onclick="closeMobileMenu()">Incluso</a>
-  <a href="#valor" onclick="closeMobileMenu()">Valor</a>
-  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-  <a href="#valor" class="mobile-cta" onclick="closeMobileMenu()">Reservar Vaga</a>
-</div>
+  <!-- ============================================= -->
+  <!-- BACK TO TOP BUTTON -->
+  <!-- ============================================= -->
+  <button class="back-to-top" id="backToTop">
+    <i class="bi bi-arrow-up"></i>
+  </button>
 
-
-<!-- ========== HERO ========== -->
-<section class="hero">
-  <div class="hero-bg-wrapper">
-    <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1920&q=80" alt="Machu Picchu Peru" class="hero-bg">
-    <div class="hero-overlay"></div>
-  </div>
-  
-  <div class="hero-content">
-    <p class="hero-overline">EXPEDIÇÃO EM GRUPO</p>
-    <h1 class="hero-title">Peru & Guatemala</h1>
-    <h2 class="hero-subtitle">Cultura ancestral, templos milenares e paisagens únicas.</h2>
-    
-    <div class="hero-info">
-      <span><i class="bi bi-calendar"></i> 2026 • Datas em breve</span>
-      <span class="separator">|</span>
-      <span><i class="bi bi-people"></i> Máximo 18 pessoas</span>
-    </div>
-    
-    <a href="#valor" class="btn-primary">
-      Garantir Minha Vaga
-    </a>
-  </div>
-  
-  <div class="hero-scroll">
-    <p>VEJA MAIS DETALHES</p>
-    <i class="bi bi-chevron-down"></i>
-  </div>
-</section>
-
-
-<!-- ========== SCROLL INDICATOR ========== -->
-<section class="scroll-indicator">
-  <div class="container">
-    <p class="scroll-text">
-      Confira abaixo o roteiro, valores e itens inclusos.
-    </p>
-    <p class="scroll-note">
-      Nota: A expedição inicia no país de destino, permitindo participantes de qualquer lugar do mundo.
-    </p>
-  </div>
-</section>
-
-
-<!-- ========== VIDEO / INTRO ========== -->
-<section class="intro-section" id="intro">
-  <div class="container">
-    
-    <div class="video-placeholder">
-      <div class="video-content">
-        <i class="bi bi-play-circle-fill"></i>
-        <p>Vídeo da Experiência</p>
-        <span>Em breve</span>
-      </div>
-    </div>
-    
-    <div class="intro-text-wrapper">
-      <h2 class="section-title elegant-color">
-        Vivências autênticas, longe do turismo de massa.
-      </h2>
-      <p class="section-desc">
-        Seja bem-vindo à Mutua Xperience. Uma jornada desenhada para conectar você com a cultura, a natureza e pessoas com o mesmo propósito.
-      </p>
-    </div>
-    
-    <!-- FOTOS DE GRUPOS -->
-    <div class="group-photos-grid">
-      <div class="photo-item"><img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400&q=80" alt="Grupo"></div>
-      <div class="photo-item"><img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=400&q=80" alt="Grupo"></div>
-      <div class="photo-item"><img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=400&q=80" alt="Grupo"></div>
-      <div class="photo-item"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80" alt="Grupo"></div>
-    </div>
-    <p class="photos-caption">REGISTROS DE EXPEDIÇÕES ANTERIORES</p>
-    
-  </div>
-</section>
-
-
-<!-- ========== SOLO TRAVELERS ========== -->
-<section class="solo-section">
-  <div class="container">
-    <div class="solo-content">
-      <h2 class="section-title align-left">
-        Ideal para quem viaja sozinho
-      </h2>
-      <p>Muitos deixam de viajar por falta de companhia. Nosso formato resolve exatamente isso.</p>
-      <p>A maioria dos nossos participantes embarca individualmente. Você só estará sozinho até o ponto de encontro. A partir dali, formamos um grupo coeso e integrado.</p>
-      <p>O idioma também não é barreira: nosso líder de expedição brasileiro acompanha o grupo integralmente, oferecendo suporte e tradução.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ========== DESTINOS ========== -->
-<section class="destinations-section" id="destinos">
-  <div class="container">
-    <h2 class="section-title">Próximos Destinos</h2>
-    <p class="section-subtitle">Escolha sua próxima grande jornada para 2026.</p>
-    
-    <div class="destinations-grid">
+  <!-- ============================================= -->
+  <!-- HEADER / NAVBAR -->
+  <!-- ============================================= -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="#" class="navbar-logo">
+        <span class="logo-text">Exped<span class="logo-accent">ições</span></span>
+      </a>
       
-      <!-- PERU -->
-      <div class="destination-card">
-        <div class="destination-img">
-          <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80" alt="Peru">
-          <div class="card-overlay">
-            <span class="country-label">PERU</span>
-          </div>
-        </div>
-        <div class="destination-body">
-          <h3>Experiência Andina</h3>
-          <p>Uma imersão profunda no legado Inca. De Cusco ao Vale Sagrado, culminando na majestosa Machu Picchu.</p>
-          <ul class="highlights-list">
-            <li><i class="bi bi-check2"></i> Machu Picchu</li>
-            <li><i class="bi bi-check2"></i> Cusco & Vale Sagrado</li>
-            <li><i class="bi bi-check2"></i> Comunidades Locais</li>
-          </ul>
-          <div class="card-footer">
-            <span class="status"><i class="bi bi-circle-fill"></i> Vagas Abertas</span>
-            <a href="#valor" class="link-arrow">Saber mais <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
+      <nav class="navbar-nav">
+        <a href="#destinos" class="nav-link">Destinos</a>
+        <a href="#roteiros" class="nav-link">Roteiros</a>
+        <a href="#hospedagem" class="nav-link">Hospedagem</a>
+        <a href="#preco" class="nav-link">Investimento</a>
+      </nav>
+      
+      <div class="navbar-actions">
+        <a href="#preco" class="btn btn-primary btn-glow">
+          <span>Reservar Vaga</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
       </div>
       
-      <!-- GUATEMALA -->
-      <div class="destination-card">
-        <div class="destination-img">
-          <img src="https://images.unsplash.com/photo-1608659597669-b45511779f93?w=800&q=80" alt="Guatemala">
-          <div class="card-overlay">
-            <span class="country-label">GUATEMALA</span>
-          </div>
-        </div>
-        <div class="destination-body">
-          <h3>Raízes Maias</h3>
-          <p>Vulcões, lagos e a imponência de Tikal. Uma jornada pelas origens da civilização Maia.</p>
-          <ul class="highlights-list">
-            <li><i class="bi bi-check2"></i> Ruínas de Tikal</li>
-            <li><i class="bi bi-check2"></i> Lago Atitlán</li>
-            <li><i class="bi bi-check2"></i> Antigua Guatemala</li>
-          </ul>
-          <div class="card-footer">
-            <span class="status"><i class="bi bi-circle-fill"></i> Vagas Abertas</span>
-            <a href="#valor" class="link-arrow">Saber mais <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      
+      <button class="navbar-toggle" id="navbarToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-  </div>
-</section>
+  </header>
 
-
-<!-- ========== ROTEIRO ========== -->
-<section class="itinerary-section" id="roteiro">
-  <div class="container">
-    <h2 class="section-title">Itinerário</h2>
-    
-    <div class="tabs-wrapper">
-      <button class="tab-btn active" onclick="showItinerary('peru')">PERU</button>
-      <button class="tab-btn" onclick="showItinerary('guatemala')">GUATEMALA</button>
+  <!-- ============================================= -->
+  <!-- HERO SECTION -->
+  <!-- ============================================= -->
+  <section class="hero" id="hero">
+    <!-- Background Image with Parallax -->
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80" alt="Expedições 2026" class="hero-bg-img">
+      <div class="hero-overlay"></div>
     </div>
     
-    <!-- ROTEIRO PERU -->
-    <div class="itinerary-container active" id="peru-itinerary">
-      <div class="timeline">
+    <!-- Grid Pattern Overlay -->
+    <div class="hero-grid-pattern"></div>
+    
+    <!-- Mouse Tracking Light Effect -->
+    <div class="hero-mouse-light" id="heroMouseLight"></div>
+    
+    <!-- Decorative Lines -->
+    <div class="hero-line hero-line-left"></div>
+    <div class="hero-line hero-line-right"></div>
+    <div class="hero-line hero-line-center"></div>
+    
+    <!-- Glow Effect -->
+    <div class="hero-glow"></div>
+
+    <div class="container hero-container">
+      <div class="hero-content reveal-on-scroll">
         
-        <div class="timeline-item">
-          <div class="timeline-img">
-            <img src="https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=600&q=80" alt="Lima">
-          </div>
-          <div class="timeline-content">
-            <span class="day-badge">DIA 1</span>
-            <h3>Chegada em Lima</h3>
-            <div class="day-desc">
-              <p>Recepção no aeroporto e traslado ao hotel. Encontro com o líder e briefing inicial do grupo.</p>
-              <p class="hotel-info"><strong>Hotel:</strong> A definir</p>
-            </div>
-            <button class="toggle-desc" onclick="toggleDay(this)">Expandir detalhes</button>
-          </div>
+        <!-- Badge -->
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Expedições 2026</span>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-img">
-            <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=600&q=80" alt="Cusco">
-          </div>
-          <div class="timeline-content">
-            <span class="day-badge">DIA 2</span>
-            <h3>Voo para Cusco</h3>
-            <div class="day-desc">
-              <p>Traslado para a antiga capital Inca. Aclimatização e caminhada pelo centro histórico (Plaza de Armas).</p>
-              <p class="hotel-info"><strong>Hotel:</strong> A definir</p>
-            </div>
-            <button class="toggle-desc" onclick="toggleDay(this)">Expandir detalhes</button>
-          </div>
+        
+        <!-- Title -->
+        <h1 class="hero-title">
+          Transforme sua vida através de
+          <span class="text-gradient">experiências extraordinárias</span>
+        </h1>
+        
+        <!-- Subtitle -->
+        <p class="hero-subtitle">
+          Expedições exclusivas para Guatemala, Peru e Tailândia. Grupos de no máximo 18 pessoas. Conexões reais, aventuras inesquecíveis e memórias para a vida toda.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="hero-cta">
+          <a href="#destinos" class="btn btn-primary btn-lg btn-glow">
+            <span>Ver Expedições</span>
+            <i class="bi bi-arrow-down"></i>
+          </a>
         </div>
-
-        <!-- Placeholder para os outros dias -->
-        <div class="timeline-item">
-          <div class="timeline-img">
-            <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&q=80" alt="Machu Picchu">
+        
+        <!-- Trust Badges -->
+        <div class="hero-trust">
+          <div class="trust-item">
+            <i class="bi bi-shield-check"></i>
+            <span>Grupos Exclusivos</span>
           </div>
-          <div class="timeline-content">
-            <span class="day-badge">DIA 4</span>
-            <h3>Machu Picchu</h3>
-            <div class="day-desc">
-              <p>O ponto alto da expedição. Visita guiada à cidadela sagrada dos Incas.</p>
-              <p class="hotel-info"><strong>Hotel:</strong> A definir</p>
-            </div>
-            <button class="toggle-desc" onclick="toggleDay(this)">Expandir detalhes</button>
+          <div class="trust-item">
+            <i class="bi bi-people-fill"></i>
+            <span>Máx. 18 Pessoas</span>
           </div>
-        </div>
-
-      </div>
-      <p class="note-text">O roteiro completo detalhado será enviado após o contato inicial.</p>
-    </div>
-
-    <!-- ROTEIRO GUATEMALA (Oculto por padrão) -->
-    <div class="itinerary-container" id="guatemala-itinerary">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-img">
-            <img src="https://images.unsplash.com/photo-1558862107-d49ef2a04d72?w=600&q=80" alt="Antigua">
-          </div>
-          <div class="timeline-content">
-            <span class="day-badge">DIA 1</span>
-            <h3>Chegada em Antigua</h3>
-            <div class="day-desc">
-              <p>Recepção em uma das cidades coloniais mais belas das Américas, cercada por vulcões.</p>
-              <p class="hotel-info"><strong>Hotel:</strong> A definir</p>
-            </div>
-            <button class="toggle-desc" onclick="toggleDay(this)">Expandir detalhes</button>
+          <div class="trust-item">
+            <i class="bi bi-globe-americas"></i>
+            <span>3 Destinos Incríveis</span>
           </div>
         </div>
         
-        <div class="timeline-item">
-          <div class="timeline-img">
-            <img src="https://images.unsplash.com/photo-1608659597669-b45511779f93?w=600&q=80" alt="Tikal">
+      </div>
+      
+      <!-- Destination Cards Preview -->
+      <div class="hero-destinations reveal-on-scroll" style="animation-delay: 0.3s;">
+        <div class="destination-preview-card" data-destination="guatemala">
+          <img src="https://images.unsplash.com/photo-1608659597006-f5c4c1e7c700?w=400&q=80" alt="Guatemala">
+          <div class="destination-preview-content">
+            <span class="destination-flag">🇬🇹</span>
+            <h3>Guatemala</h3>
           </div>
-          <div class="timeline-content">
-            <span class="day-badge">DIA 4</span>
-            <h3>Exploração de Tikal</h3>
-            <div class="day-desc">
-              <p>Caminhada pela selva para descobrir as impressionantes pirâmides Maias de Tikal.</p>
-              <p class="hotel-info"><strong>Hotel:</strong> A definir</p>
-            </div>
-            <button class="toggle-desc" onclick="toggleDay(this)">Expandir detalhes</button>
+        </div>
+        <div class="destination-preview-card" data-destination="peru">
+          <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=400&q=80" alt="Peru">
+          <div class="destination-preview-content">
+            <span class="destination-flag">🇵🇪</span>
+            <h3>Peru</h3>
+          </div>
+        </div>
+        <div class="destination-preview-card" data-destination="tailandia">
+          <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&q=80" alt="Tailândia">
+          <div class="destination-preview-content">
+            <span class="destination-flag">🇹🇭</span>
+            <h3>Tailândia</h3>
           </div>
         </div>
       </div>
-      <p class="note-text">O roteiro completo detalhado será enviado após o contato inicial.</p>
     </div>
-
-  </div>
-</section>
-
-
-<!-- ========== HOSPEDAGEM ========== -->
-<section class="hotel-section">
-  <div class="container">
-    <h2 class="section-title">Hospedagem</h2>
-    <p class="section-subtitle">Conforto e localização estratégica. Hotéis 4 e 5 estrelas selecionados.</p>
     
-    <div class="hotel-display">
-      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80" alt="Hotel">
-      <div class="hotel-features">
-        <div class="feature">
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator">
+      <span>Role para explorar</span>
+      <div class="scroll-arrow">
+        <i class="bi bi-chevron-double-down"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- VIDEO SECTION -->
+  <!-- ============================================= -->
+  <section class="section section-video" id="video">
+    <div class="section-bg-pattern"></div>
+    
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <i class="bi bi-play-circle"></i>
+          <span>Conheça Nossa Proposta</span>
+        </div>
+        <h2 class="section-title">
+          Imagine você vivendo
+          <span class="text-gradient">momentos únicos</span>
+        </h2>
+        <p class="section-subtitle">
+          Assista ao vídeo e descubra como nossas expedições podem transformar sua forma de viajar
+        </p>
+      </div>
+      
+      <!-- Video Placeholder -->
+      <div class="video-container reveal-on-scroll">
+        <div class="video-placeholder">
+          <div class="video-placeholder-content">
+            <div class="video-placeholder-icon">
+              <i class="bi bi-camera-video"></i>
+            </div>
+            <h3>Vídeo em Produção</h3>
+            <p>Em breve você poderá assistir ao vídeo completo sobre nossas expedições</p>
+            <div class="video-placeholder-badge">
+              <i class="bi bi-hourglass-split"></i>
+              <span>Coming Soon</span>
+            </div>
+          </div>
+          <div class="video-placeholder-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- NOSSOS GRUPOS - INFINITE SCROLL -->
+  <!-- ============================================= -->
+  <section class="section section-groups" id="grupos">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
           <i class="bi bi-people"></i>
-          <span>Quartos Duplos</span>
+          <span>Prova Social</span>
         </div>
-        <div class="feature">
-          <i class="bi bi-cup-hot"></i>
-          <span>Café da Manhã</span>
-        </div>
-        <div class="feature">
-          <i class="bi bi-wifi"></i>
-          <span>Wi-Fi Incluso</span>
-        </div>
+        <h2 class="section-title">
+          Nossos
+          <span class="text-gradient">últimos grupos</span>
+        </h2>
+        <p class="section-subtitle">
+          Veja como foi a experiência de quem já viajou em expedições como as nossas
+        </p>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- ========== INCLUSOS ========== -->
-<section class="included-section" id="incluso">
-  <div class="container">
-    <div class="columns-grid">
-      
-      <!-- O QUE ESTÁ INCLUSO -->
-      <div class="col-included">
-        <h3 class="col-title">O que está incluso</h3>
-        <ul class="check-list">
-          <li><i class="bi bi-check-circle-fill"></i> Transfers Aeroporto - Hotel - Aeroporto</li>
-          <li><i class="bi bi-check-circle-fill"></i> Todos os voos domésticos no destino</li>
-          <li><i class="bi bi-check-circle-fill"></i> Hotéis 4/5 estrelas com café da manhã</li>
-          <li><i class="bi bi-check-circle-fill"></i> Líder de expedição brasileiro (Full time)</li>
-          <li><i class="bi bi-check-circle-fill"></i> Ingressos para todas as atrações do roteiro</li>
-          <li><i class="bi bi-check-circle-fill"></i> Transporte privado nos passeios</li>
-          <li><i class="bi bi-check-circle-fill"></i> Fotos e vídeos profissionais da viagem</li>
-          <li><i class="bi bi-check-circle-fill"></i> Grupo de interação no WhatsApp</li>
-        </ul>
-      </div>
-
-      <!-- O QUE NÃO ESTÁ INCLUSO -->
-      <div class="col-excluded">
-        <h3 class="col-title excluded">Não incluso</h3>
-        <ul class="cross-list">
-          <li><i class="bi bi-x-circle"></i> Passagens aéreas internacionais</li>
-          <li><i class="bi bi-x-circle"></i> Seguro viagem (Obrigatório)</li>
-          <li><i class="bi bi-x-circle"></i> Almoços e jantares (salvo exceções)</li>
-          <li><i class="bi bi-x-circle"></i> Despesas pessoais e gorjetas</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ========== LÍDER ========== -->
-<section class="leader-section">
-  <div class="container">
-    <div class="leader-profile">
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Líder" class="leader-img">
-      <div class="leader-text">
-        <h3>Líder da Expedição</h3>
-        <p class="leader-name">Nome a Definir</p>
-        <p>Responsável por toda a logística e suporte do grupo. Com vasta experiência em viagens internacionais, garantindo segurança e momentos inesquecíveis.</p>
-        <a href="#" class="social-link"><i class="bi bi-instagram"></i> @mutuaxperience</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ========== VALOR / PRICING ========== -->
-<section class="pricing-section" id="valor">
-  <div class="container">
-    <h2 class="section-title light">Investimento</h2>
     
-    <div class="pricing-tabs">
-      <button class="pricing-tab active" onclick="showPricing('valor')">VALORES</button>
-      <button class="pricing-tab" onclick="showPricing('cancelamento')">POLÍTICA</button>
-      <button class="pricing-tab" onclick="showPricing('observacoes')">OBSERVAÇÕES</button>
-    </div>
-
-    <div class="pricing-display active" id="pricing-valor">
-      <div class="price-card">
-        <div class="price-header">
-          <span class="tag">LOTE 2026</span>
-          <h3>Valores em breve</h3>
-        </div>
-        <div class="price-body">
-          <p class="price-desc">Os valores finais serão divulgados com o lançamento do roteiro oficial.</p>
-          <div class="price-row">
-            <span>Acomodação:</span>
-            <strong>Quarto Duplo</strong>
+    <!-- Infinite Scroll Gallery -->
+    <div class="groups-gallery reveal-on-scroll">
+      <div class="groups-scroll">
+        <div class="groups-track">
+          <!-- Imagem 1 -->
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400&q=80" alt="Grupo de viagem 1">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <!-- Imagem 2 -->
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=400&q=80" alt="Grupo de viagem 2">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <!-- Imagem 3 -->
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400&q=80" alt="Grupo de viagem 3">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <!-- Imagem 4 -->
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&q=80" alt="Grupo de viagem 4">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <!-- Imagem 5 -->
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=400&q=80" alt="Grupo de viagem 5">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <!-- Imagem 6 -->
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?w=400&q=80" alt="Grupo de viagem 6">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <!-- Imagem 7 -->
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?w=400&q=80" alt="Grupo de viagem 7">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <!-- Imagem 8 -->
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=400&q=80" alt="Grupo de viagem 8">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
           </div>
           
-          <hr class="divider">
+          <!-- Duplicados para loop infinito -->
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400&q=80" alt="Grupo de viagem 1">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=400&q=80" alt="Grupo de viagem 2">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400&q=80" alt="Grupo de viagem 3">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&q=80" alt="Grupo de viagem 4">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=400&q=80" alt="Grupo de viagem 5">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?w=400&q=80" alt="Grupo de viagem 6">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?w=400&q=80" alt="Grupo de viagem 7">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+          <div class="group-card">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=400&q=80" alt="Grupo de viagem 8">
+            <div class="group-card-overlay">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Fade edges -->
+      <div class="groups-fade groups-fade-left"></div>
+      <div class="groups-fade groups-fade-right"></div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- DESTINOS / ROTEIROS -->
+  <!-- ============================================= -->
+  <section class="section section-destinations" id="destinos">
+    <div class="section-bg-gradient"></div>
+    
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <i class="bi bi-compass"></i>
+          <span>Expedições 2026</span>
+        </div>
+        <h2 class="section-title">
+          Roteiro da
+          <span class="text-gradient">viagem</span>
+        </h2>
+        <p class="section-subtitle">
+          Escolha seu destino e descubra cada detalhe da expedição. Clique para ver o roteiro completo.
+        </p>
+      </div>
+      
+      <!-- Destinations Grid -->
+      <div class="destinations-grid reveal-on-scroll">
+        
+        <!-- Guatemala -->
+        <div class="destination-card" data-destination="guatemala" onclick="openItineraryModal('guatemala')">
+          <div class="destination-card-bg">
+            <img src="https://images.unsplash.com/photo-1608659597006-f5c4c1e7c700?w=800&q=80" alt="Guatemala">
+          </div>
+          <div class="destination-card-overlay"></div>
+          <div class="destination-card-glow"></div>
           
-          <h4>Formas de Pagamento</h4>
-          <ul class="payment-list">
-            <li><i class="bi bi-check2-circle"></i> À vista (PIX/Boleto)</li>
-            <li><i class="bi bi-check2-circle"></i> Parcelado (Entrada + Parcelas sem juros)</li>
-            <li><i class="bi bi-check2-circle"></i> Cartão de Crédito</li>
-          </ul>
+          <div class="destination-card-content">
+            <div class="destination-card-header">
+              <span class="destination-flag-large">🇬🇹</span>
+              <div class="destination-badge">
+                <i class="bi bi-calendar-event"></i>
+                <span>2026</span>
+              </div>
+            </div>
+            
+            <h3 class="destination-name">Guatemala</h3>
+            <p class="destination-tagline">Terra dos Maias e vulcões majestosos</p>
+            
+            <div class="destination-highlights">
+              <div class="highlight-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>Tikal, Antigua, Atitlán</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-people"></i>
+                <span>Máx. 18 pessoas</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-calendar3"></i>
+                <span>Datas em breve</span>
+              </div>
+            </div>
+            
+            <div class="destination-cta">
+              <span>Ver roteiro completo</span>
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
           
-          <a href="https://wa.me/message/YZASP7OM735MO1" class="btn-whatsapp-full">
-            <i class="bi bi-whatsapp"></i> Entrar na Lista de Espera
+          <div class="destination-card-shine"></div>
+        </div>
+        
+        <!-- Peru -->
+        <div class="destination-card" data-destination="peru" onclick="openItineraryModal('peru')">
+          <div class="destination-card-bg">
+            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=80" alt="Peru">
+          </div>
+          <div class="destination-card-overlay"></div>
+          <div class="destination-card-glow"></div>
+          
+          <div class="destination-card-content">
+            <div class="destination-card-header">
+              <span class="destination-flag-large">🇵🇪</span>
+              <div class="destination-badge">
+                <i class="bi bi-calendar-event"></i>
+                <span>2026</span>
+              </div>
+            </div>
+            
+            <h3 class="destination-name">Peru</h3>
+            <p class="destination-tagline">Império Inca e Machu Picchu</p>
+            
+            <div class="destination-highlights">
+              <div class="highlight-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>Cusco, Machu Picchu, Lima</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-people"></i>
+                <span>Máx. 18 pessoas</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-calendar3"></i>
+                <span>Datas em breve</span>
+              </div>
+            </div>
+            
+            <div class="destination-cta">
+              <span>Ver roteiro completo</span>
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+          
+          <div class="destination-card-shine"></div>
+        </div>
+        
+        <!-- Tailândia -->
+        <div class="destination-card" data-destination="tailandia" onclick="openItineraryModal('tailandia')">
+          <div class="destination-card-bg">
+            <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80" alt="Tailândia">
+          </div>
+          <div class="destination-card-overlay"></div>
+          <div class="destination-card-glow"></div>
+          
+          <div class="destination-card-content">
+            <div class="destination-card-header">
+              <span class="destination-flag-large">🇹🇭</span>
+              <div class="destination-badge">
+                <i class="bi bi-calendar-event"></i>
+                <span>2026</span>
+              </div>
+            </div>
+            
+            <h3 class="destination-name">Tailândia</h3>
+            <p class="destination-tagline">Templos, praias e o Festival das Lanternas</p>
+            
+            <div class="destination-highlights">
+              <div class="highlight-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>Bangkok, Chiang Mai, Phi Phi</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-people"></i>
+                <span>Máx. 18 pessoas</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-calendar3"></i>
+                <span>Datas em breve</span>
+              </div>
+            </div>
+            
+            <div class="destination-cta">
+              <span>Ver roteiro completo</span>
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+          
+          <div class="destination-card-shine"></div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- HOSPEDAGEM -->
+  <!-- ============================================= -->
+  <section class="section section-hotels" id="hospedagem">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <i class="bi bi-building"></i>
+          <span>Acomodações</span>
+        </div>
+        <h2 class="section-title">
+          Hospedagens na
+          <span class="text-gradient">viagem</span>
+        </h2>
+        <p class="section-subtitle">
+          Ficaremos hospedados em excelentes hotéis 4 ou 5 estrelas, em quartos duplos. Todos têm estrutura super confortável com café da manhã incluso.
+        </p>
+      </div>
+      
+      <!-- Hotels Tabs -->
+      <div class="hotels-tabs reveal-on-scroll">
+        <button class="hotel-tab active" data-tab="guatemala">
+          <span class="tab-flag">🇬🇹</span>
+          <span class="tab-name">Guatemala</span>
+        </button>
+        <button class="hotel-tab" data-tab="peru">
+          <span class="tab-flag">🇵🇪</span>
+          <span class="tab-name">Peru</span>
+        </button>
+        <button class="hotel-tab" data-tab="tailandia">
+          <span class="tab-flag">🇹🇭</span>
+          <span class="tab-name">Tailândia</span>
+        </button>
+      </div>
+      
+      <!-- Hotels Content -->
+      <div class="hotels-content reveal-on-scroll">
+        
+        <!-- Guatemala Hotels -->
+        <div class="hotel-panel active" id="hotel-guatemala">
+          <div class="hotel-grid">
+            <div class="hotel-card">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Hotel Guatemala 1">
+              <div class="hotel-card-content">
+                <h4>Antigua</h4>
+                <p>Hotel boutique colonial</p>
+                <div class="hotel-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-card">
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80" alt="Hotel Guatemala 2">
+              <div class="hotel-card-content">
+                <h4>Lago Atitlán</h4>
+                <p>Vista para o lago</p>
+                <div class="hotel-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-card">
+              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80" alt="Hotel Guatemala 3">
+              <div class="hotel-card-content">
+                <h4>Flores/Tikal</h4>
+                <p>Eco-lodge na selva</p>
+                <div class="hotel-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Peru Hotels -->
+        <div class="hotel-panel" id="hotel-peru">
+          <div class="hotel-grid">
+            <div class="hotel-card">
+              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80" alt="Hotel Peru 1">
+              <div class="hotel-card-content">
+                <h4>Cusco</h4>
+                <p>Hotel histórico no centro</p>
+                <div class="hotel-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-card">
+              <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80" alt="Hotel Peru 2">
+              <div class="hotel-card-content">
+                <h4>Vale Sagrado</h4>
+                <p>Resort com spa</p>
+                <div class="hotel-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-card">
+              <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=80" alt="Hotel Peru 3">
+              <div class="hotel-card-content">
+                <h4>Águas Calientes</h4>
+                <p>Próximo a Machu Picchu</p>
+                <div class="hotel-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tailândia Hotels -->
+        <div class="hotel-panel" id="hotel-tailandia">
+          <div class="hotel-grid">
+            <div class="hotel-card">
+              <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80" alt="Hotel Tailândia 1">
+              <div class="hotel-card-content">
+                <h4>Bangkok</h4>
+                <p>Hotel 5 estrelas central</p>
+                <div class="hotel-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-card">
+              <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80" alt="Hotel Tailândia 2">
+              <div class="hotel-card-content">
+                <h4>Chiang Mai</h4>
+                <p>Boutique hotel</p>
+                <div class="hotel-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-card">
+              <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600&q=80" alt="Hotel Tailândia 3">
+              <div class="hotel-card-content">
+                <h4>Phi Phi Islands</h4>
+                <p>Resort na praia</p>
+                <div class="hotel-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+    <!-- ============================================= -->
+  <!-- O QUE ESTÁ INCLUSO -->
+  <!-- ============================================= -->
+  <section class="section section-included" id="inclusos">
+    <div class="section-bg-dots"></div>
+    
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge section-badge-success">
+          <i class="bi bi-check-circle"></i>
+          <span>Tudo Incluso</span>
+        </div>
+        <h2 class="section-title">
+          O que está
+          <span class="text-gradient-success">incluso na viagem?</span>
+        </h2>
+      </div>
+      
+      <!-- Included Items Grid -->
+      <div class="included-grid reveal-on-scroll">
+        
+        <div class="included-card">
+          <div class="included-icon">
+            <i class="bi bi-car-front"></i>
+          </div>
+          <h4>Transfers</h4>
+          <p>Hotel - Aeroporto - Hotel</p>
+        </div>
+        
+        <div class="included-card">
+          <div class="included-icon">
+            <i class="bi bi-airplane"></i>
+          </div>
+          <h4>Voos Domésticos</h4>
+          <p>Dentro do país de destino</p>
+          <span class="included-note">Bagagem despachada não inclusa</span>
+        </div>
+        
+        <div class="included-card">
+          <div class="included-icon">
+            <i class="bi bi-building"></i>
+          </div>
+          <h4>Hotéis 4 ou 5 estrelas</h4>
+          <p>Com café da manhã incluso</p>
+        </div>
+        
+        <div class="included-card">
+          <div class="included-icon">
+            <i class="bi bi-person-badge"></i>
+          </div>
+          <h4>Líder de Expedição</h4>
+          <p>Acompanhamento integral brasileiro</p>
+        </div>
+        
+        <div class="included-card">
+          <div class="included-icon">
+            <i class="bi bi-ticket-perforated"></i>
+          </div>
+          <h4>Ingressos</h4>
+          <p>Para todas as atrações do roteiro</p>
+        </div>
+        
+        <div class="included-card">
+          <div class="included-icon">
+            <i class="bi bi-egg-fried"></i>
+          </div>
+          <h4>Refeições</h4>
+          <p>Cafés da manhã, almoços e jantares selecionados</p>
+          <span class="included-note">Bebidas não inclusas</span>
+        </div>
+        
+        <div class="included-card">
+          <div class="included-icon">
+            <i class="bi bi-bus-front"></i>
+          </div>
+          <h4>Transportes</h4>
+          <p>Durante todos os passeios</p>
+        </div>
+        
+        <div class="included-card">
+          <div class="included-icon">
+            <i class="bi bi-camera"></i>
+          </div>
+          <h4>Fotos e Vídeos</h4>
+          <p>iPhone, câmera profissional e drone</p>
+        </div>
+        
+        <div class="included-card">
+          <div class="included-icon">
+            <i class="bi bi-whatsapp"></i>
+          </div>
+          <h4>Grupo WhatsApp</h4>
+          <p>Para interação e tira-dúvidas</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- O QUE NÃO ESTÁ INCLUSO -->
+  <!-- ============================================= -->
+  <section class="section section-not-included">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge section-badge-danger">
+          <i class="bi bi-x-circle"></i>
+          <span>Não Incluso</span>
+        </div>
+        <h2 class="section-title">
+          O que
+          <span class="text-gradient-danger">NÃO está incluso?</span>
+        </h2>
+      </div>
+      
+      <div class="not-included-list reveal-on-scroll">
+        <div class="not-included-item">
+          <i class="bi bi-x-circle-fill"></i>
+          <span>Voo internacional</span>
+        </div>
+        <div class="not-included-item">
+          <i class="bi bi-x-circle-fill"></i>
+          <span>Almoços e jantares (exceto os mencionados no roteiro)</span>
+        </div>
+        <div class="not-included-item">
+          <i class="bi bi-x-circle-fill"></i>
+          <span>Seguro viagem e despesas médicas</span>
+        </div>
+        <div class="not-included-item">
+          <i class="bi bi-x-circle-fill"></i>
+          <span>Gastos pessoais não mencionados</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- LÍDER DA EXPEDIÇÃO -->
+  <!-- ============================================= -->
+  <section class="section section-leader" id="lider">
+    <div class="section-bg-gradient-reverse"></div>
+    
+    <div class="container">
+      <div class="leader-content reveal-on-scroll">
+        <div class="leader-image-container">
+          <!-- Placeholder para foto do líder -->
+          <div class="leader-image-placeholder">
+            <i class="bi bi-person-circle"></i>
+            <span>Foto em breve</span>
+          </div>
+          <div class="leader-image-glow"></div>
+        </div>
+        
+        <div class="leader-info">
+          <div class="section-badge">
+            <i class="bi bi-star"></i>
+            <span>Seu Guia</span>
+          </div>
+          <h2 class="section-title">
+            Líder da
+            <span class="text-gradient">Expedição</span>
+          </h2>
+          <h3 class="leader-name">Montgomery Abientar</h3>
+          <p class="leader-bio">
+            Montgomery será o líder do grupo em todas as expedições, te ajudando a ter uma experiência ainda mais incrível durante toda a viagem. Com vasta experiência em viagens internacionais e uma paixão por conectar pessoas através de experiências transformadoras.
+          </p>
+          <div class="leader-stats">
+            <div class="leader-stat">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Destinos</span>
+            </div>
+            <div class="leader-stat">
+              <span class="stat-number">18</span>
+              <span class="stat-label">Pessoas/Grupo</span>
+            </div>
+            <div class="leader-stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Dedicação</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- DEPOIMENTOS - INFINITE SCROLL -->
+  <!-- ============================================= -->
+  <section class="section section-testimonials" id="depoimentos">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <i class="bi bi-chat-quote"></i>
+          <span>Depoimentos</span>
+        </div>
+        <h2 class="section-title">
+          Quem já
+          <span class="text-gradient">viajou com a gente</span>
+        </h2>
+        <p class="section-subtitle">
+          Veja como foi a experiência de quem viajou em expedições anteriores
+        </p>
+      </div>
+    </div>
+    
+    <!-- Testimonials Infinite Scroll -->
+    <div class="testimonials-scroll reveal-on-scroll">
+      <div class="testimonials-track">
+        
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Maria S.">
+            </div>
+            <div class="testimonial-info">
+              <h4>Maria S.</h4>
+              <span>Expedição Peru 2024</span>
+            </div>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">"Uma experiência transformadora! O grupo foi incrível e as paisagens de tirar o fôlego. Recomendo demais!"</p>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="João P.">
+            </div>
+            <div class="testimonial-info">
+              <h4>João P.</h4>
+              <span>Expedição Tailândia 2024</span>
+            </div>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">"Melhor viagem da minha vida! O Festival das Lanternas foi mágico. Já estou me inscrevendo para a próxima!"</p>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Ana C.">
+            </div>
+            <div class="testimonial-info">
+              <h4>Ana C.</h4>
+              <span>Expedição Guatemala 2024</span>
+            </div>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">"Tinha medo de viajar sozinha, mas foi a melhor decisão! Fiz amizades para a vida toda."</p>
+        </div>
+        
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Pedro M.">
+            </div>
+            <div class="testimonial-info">
+              <h4>Pedro M.</h4>
+              <span>Expedição Peru 2024</span>
+            </div>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">"Machu Picchu ao vivo é indescritível. A organização foi impecável do início ao fim!"</p>
+        </div>
+        
+        <!-- Testimonial 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="Carla R.">
+            </div>
+            <div class="testimonial-info">
+              <h4>Carla R.</h4>
+              <span>Expedição Tailândia 2024</span>
+            </div>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">"Os hotéis eram maravilhosos e os passeios muito bem planejados. Voltei outra pessoa!"</p>
+        </div>
+        
+        <!-- Testimonial 6 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/men/6.jpg" alt="Lucas A.">
+            </div>
+            <div class="testimonial-info">
+              <h4>Lucas A.</h4>
+              <span>Expedição Guatemala 2024</span>
+            </div>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">"Tikal foi surreal! Nunca imaginei que faria amigos tão incríveis em uma viagem."</p>
+        </div>
+        
+        <!-- Duplicados para loop infinito -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Maria S.">
+            </div>
+            <div class="testimonial-info">
+              <h4>Maria S.</h4>
+              <span>Expedição Peru 2024</span>
+            </div>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">"Uma experiência transformadora! O grupo foi incrível e as paisagens de tirar o fôlego. Recomendo demais!"</p>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="João P.">
+            </div>
+            <div class="testimonial-info">
+              <h4>João P.</h4>
+              <span>Expedição Tailândia 2024</span>
+            </div>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">"Melhor viagem da minha vida! O Festival das Lanternas foi mágico. Já estou me inscrevendo para a próxima!"</p>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Ana C.">
+            </div>
+            <div class="testimonial-info">
+              <h4>Ana C.</h4>
+              <span>Expedição Guatemala 2024</span>
+            </div>
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">"Tinha medo de viajar sozinha, mas foi a melhor decisão! Fiz amizades para a vida toda."</p>
+        </div>
+        
+      </div>
+      
+      <!-- Fade edges -->
+      <div class="testimonials-fade testimonials-fade-left"></div>
+      <div class="testimonials-fade testimonials-fade-right"></div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- PREÇO / INVESTIMENTO -->
+  <!-- ============================================= -->
+  <section class="section section-pricing" id="preco">
+    <div class="section-bg-parallax" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80');"></div>
+    <div class="section-overlay"></div>
+    
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge section-badge-light">
+          <i class="bi bi-gem"></i>
+          <span>Investimento</span>
+        </div>
+        <h2 class="section-title section-title-light">
+          Quero embarcar
+          <span class="text-gradient">nessa viagem!</span>
+        </h2>
+      </div>
+      
+      <!-- Pricing Card -->
+      <div class="pricing-container reveal-on-scroll">
+        <div class="pricing-card">
+          <div class="pricing-card-glow"></div>
+          
+          <!-- Pricing Tabs -->
+          <div class="pricing-tabs">
+            <button class="pricing-tab active" data-tab="valor">Valor</button>
+            <button class="pricing-tab" data-tab="cancelamento">Cancelamento</button>
+            <button class="pricing-tab" data-tab="observacoes">Observações</button>
+          </div>
+          
+          <!-- Pricing Content - Valor -->
+          <div class="pricing-panel active" id="pricing-valor">
+            <div class="pricing-header">
+              <span class="pricing-label">Investimento por pessoa</span>
+              <div class="pricing-early-bird">
+                <i class="bi bi-clock"></i>
+                <span>Valor promocional até 31/12/2025</span>
+              </div>
+            </div>
+            
+            <div class="pricing-values">
+              <div class="pricing-value-group">
+                <span class="pricing-currency">USD</span>
+                <span class="pricing-amount">3.990</span>
+              </div>
+              <div class="pricing-divider">ou</div>
+              <div class="pricing-value-group">
+                <span class="pricing-currency">BRL</span>
+                <span class="pricing-amount">21.990</span>
+              </div>
+            </div>
+            
+            <p class="pricing-note">por pessoa (quarto duplo)</p>
+            
+            <div class="pricing-after">
+              <span>A partir de 01/01/2026:</span>
+              <strong>USD 4.290 / BRL 22.990</strong>
+            </div>
+            
+            <div class="pricing-payment">
+              <h4>Formas de Pagamento</h4>
+              
+              <div class="payment-option">
+                <div class="payment-icon"><i class="bi bi-cash-stack"></i></div>
+                <div class="payment-info">
+                  <strong>À Vista</strong>
+                  <p>PIX, transferência bancária ou boleto</p>
+                </div>
+              </div>
+              
+              <div class="payment-option">
+                <div class="payment-icon"><i class="bi bi-calendar-check"></i></div>
+                <div class="payment-info">
+                  <strong>Parcelado</strong>
+                  <p>Entrada + parcelas sem juros até 30 dias antes</p>
+                </div>
+              </div>
+              
+              <div class="payment-option">
+                <div class="payment-icon"><i class="bi bi-credit-card"></i></div>
+                <div class="payment-info">
+                  <strong>Cartão de Crédito</strong>
+                  <p>Em até 12x (consulte condições)</p>
+                </div>
+              </div>
+            </div>
+            
+            <a href="#" class="btn btn-primary btn-lg btn-glow btn-full" id="btnReservar">
+              <i class="bi bi-whatsapp"></i>
+              <span>Reservar pelo WhatsApp</span>
+            </a>
+          </div>
+          
+          <!-- Pricing Content - Cancelamento -->
+          <div class="pricing-panel" id="pricing-cancelamento">
+            <h3>Política de Cancelamento</h3>
+            <div class="cancellation-list">
+              <div class="cancellation-item">
+                <div class="cancellation-period">Até 7 dias após o pagamento</div>
+                <div class="cancellation-policy">Devolução integral do valor pago</div>
+              </div>
+              <div class="cancellation-item">
+                <div class="cancellation-period">Até 60 dias antes da partida</div>
+                <div class="cancellation-policy">50% de multa sobre o valor pago</div>
+              </div>
+              <div class="cancellation-item">
+                <div class="cancellation-period">Após 60 dias antes da partida</div>
+                <div class="cancellation-policy">Não haverá reembolso</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pricing Content - Observações -->
+          <div class="pricing-panel" id="pricing-observacoes">
+            <h3>Observações Importantes</h3>
+            <div class="observations-list">
+              <div class="observation-item">
+                <i class="bi bi-people"></i>
+                <div>
+                  <strong>Grupo Limitado</strong>
+                  <p>Máximo de 18 pessoas por expedição</p>
+                </div>
+              </div>
+              <div class="observation-item">
+                <i class="bi bi-passport"></i>
+                <div>
+                  <strong>Documentos</strong>
+                  <p>Passaporte válido por no mínimo 6 meses</p>
+                </div>
+              </div>
+              <div class="observation-item">
+                <i class="bi bi-shield-check"></i>
+                <div>
+                  <strong>Vacinas</strong>
+                  <p>Certificado internacional de febre amarela</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- FOOTER -->
+  <!-- ============================================= -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-text">Exped<span class="logo-accent">ições</span></span>
+          <p>Transformando vidas através de experiências extraordinárias pelo mundo.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Destinos 2026</h4>
+          <a href="#destinos">🇬🇹 Guatemala</a>
+          <a href="#destinos">🇵🇪 Peru</a>
+          <a href="#destinos">🇹🇭 Tailândia</a>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Links</h4>
+          <a href="#roteiros">Roteiros</a>
+          <a href="#hospedagem">Hospedagem</a>
+          <a href="#preco">Investimento</a>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Contato</h4>
+          <a href="#" class="footer-social">
+            <i class="bi bi-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+          <a href="#" class="footer-social">
+            <i class="bi bi-instagram"></i>
+            <span>Instagram</span>
           </a>
         </div>
       </div>
-    </div>
-
-    <div class="pricing-display" id="pricing-cancelamento">
-      <div class="text-content-box">
-        <h3>Política de Cancelamento</h3>
-        <ul>
-          <li><strong>Até 7 dias após compra:</strong> Reembolso integral (100%).</li>
-          <li><strong>Até 60 dias antes da viagem:</strong> Multa de 50%.</li>
-          <li><strong>Menos de 60 dias:</strong> Sem reembolso (valores já comprometidos com fornecedores).</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="pricing-display" id="pricing-observacoes">
-      <div class="text-content-box">
-        <h3>Informações Importantes</h3>
-        <p><strong>Vagas:</strong> Grupo limitado a 18 pessoas.</p>
-        <p><strong>Documentação:</strong> Passaporte válido (mínimo 6 meses).</p>
-        <p><strong>Saúde:</strong> Certificado Internacional de Vacinação (Febre Amarela) obrigatório.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ========== NEXT STEPS ========== -->
-<section class="steps-section">
-  <div class="container">
-    <h2 class="section-title">Próximos Passos</h2>
-    <div class="steps-grid">
-      <div class="step-item">
-        <span class="step-num">1</span>
-        <p>Envie uma mensagem demonstrando interesse.</p>
-      </div>
-      <div class="step-item">
-        <span class="step-num">2</span>
-        <p>Tiramos todas as suas dúvidas.</p>
-      </div>
-      <div class="step-item">
-        <span class="step-num">3</span>
-        <p>Envio e assinatura do contrato.</p>
-      </div>
-      <div class="step-item">
-        <span class="step-num">4</span>
-        <p>Pagamento e reserva confirmada.</p>
-      </div>
-      <div class="step-item">
-        <span class="step-num">5</span>
-        <p>Acesso ao grupo exclusivo.</p>
-      </div>
-    </div>
-    <div class="cta-wrapper">
-      <a href="https://wa.me/message/YZASP7OM735MO1" class="btn-primary">Falar com a Equipe</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ========== FAQ ========== -->
-<section class="faq-section" id="faq">
-  <div class="container">
-    <h2 class="section-title">Perguntas Frequentes</h2>
-    
-    <div class="accordion">
-      <div class="accordion-item">
-        <button class="accordion-header" onclick="toggleAccordion(this)">
-          Não moro no Brasil, posso ir? <i class="bi bi-plus"></i>
-        </button>
-        <div class="accordion-body">
-          <p>Sim! O ponto de encontro é no destino. Você pode voar de qualquer lugar do mundo.</p>
-        </div>
-      </div>
       
-      <div class="accordion-item">
-        <button class="accordion-header" onclick="toggleAccordion(this)">
-          Preciso saber falar inglês ou espanhol? <i class="bi bi-plus"></i>
-        </button>
-        <div class="accordion-body">
-          <p>Não é necessário. O líder da expedição fala português e fará toda a intermediação necessária.</p>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Expedições. Todos os direitos reservados.</p>
       </div>
-      
-      <div class="accordion-item">
-        <button class="accordion-header" onclick="toggleAccordion(this)">
-          As passagens internacionais estão inclusas? <i class="bi bi-plus"></i>
+    </div>
+  </footer>
+
+  <!-- ============================================= -->
+  <!-- MODAL - ITINERÁRIO -->
+  <!-- ============================================= -->
+  <div class="modal" id="itineraryModal">
+    <div class="modal-backdrop" onclick="closeItineraryModal()"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Roteiro da Viagem</h2>
+        <button class="modal-close" onclick="closeItineraryModal()">
+          <i class="bi bi-x-lg"></i>
         </button>
-        <div class="accordion-body">
-          <p>Não. Cada participante compra sua passagem separadamente, permitindo flexibilidade de datas e uso de milhas.</p>
-        </div>
       </div>
-      
-      <div class="accordion-item">
-        <button class="accordion-header" onclick="toggleAccordion(this)">
-          Qual a faixa etária do grupo? <i class="bi bi-plus"></i>
-        </button>
-        <div class="accordion-body">
-          <p>Aceitamos participantes a partir de 18 anos. Nossos grupos costumam ser bem diversos, unidos pelo espírito de aventura.</p>
-        </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Conteúdo do roteiro será inserido via JavaScript -->
       </div>
     </div>
   </div>
-</section>
 
+  <!-- Scripts -->
+  <script src="script.js"></script>
 
-<!-- ========== VIAGEM PRIVADA ========== -->
-<section class="private-trip">
-  <div class="container">
-    <div class="private-content">
-      <h3>Prefere uma viagem exclusiva?</h3>
-      <p>Organizamos roteiros privados para casais, famílias ou grupos de amigos. Datas flexíveis e itinerário 100% personalizado para você.</p>
-      <a href="https://wa.me/message/YZASP7OM735MO1" class="btn-outline">Cotar Viagem Privada</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ========== FOOTER ========== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="logo-text">MUTUA<span class="accent">XPERIENCE</span></span>
-        <p>Viagens que transformam.</p>
-        <div class="cadastur">
-          <small>Cadastur: 44.573.471/0001-64</small>
-        </div>
-      </div>
-      <div class="footer-links">
-        <a href="#destinos">Destinos</a>
-        <a href="#roteiro">Roteiro</a>
-        <a href="#valor">Valores</a>
-        <a href="#faq">FAQ</a>
-      </div>
-      <div class="footer-social">
-        <a href="https://instagram.com/mutuaxperience" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://wa.me/message/YZASP7OM735MO1" target="_blank"><i class="bi bi-whatsapp"></i></a>
-      </div>
-    </div>
-    <div class="footer-copy">
-      <p>&copy; <span id="year"></span> Mutua Xperience. Todos os direitos reservados.</p>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
