@@ -1,2513 +1,354 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Expedições 2026 - Guatemala, Peru & Tailândia</title>
-  <meta name="description" content="Expedições exclusivas em grupo para Guatemala, Peru e Tailândia em 2026. Máximo 18 pessoas.">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <style>
-    /* ========== RESET & BASE ========== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #1a1a2e;
-      background-color: #fafafa;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    ul, ol {
-      list-style: none;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-
-    /* ========== VARIABLES ========== */
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --primary-light: #3b82f6;
-      --secondary: #f59e0b;
-      --secondary-dark: #d97706;
-      --secondary-light: #fbbf24;
-      --dark: #1a1a2e;
-      --gray-900: #1f2937;
-      --gray-700: #374151;
-      --gray-500: #6b7280;
-      --gray-300: #d1d5db;
-      --gray-100: #f3f4f6;
-      --white: #ffffff;
-      --success: #10b981;
-      --error: #ef4444;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      --radius: 12px;
-      --radius-lg: 16px;
-      --radius-full: 9999px;
-    }
-
-    /* ========== CONTAINER ========== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* ========== BUTTONS ========== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 24px;
-      font-size: 15px;
-      font-weight: 600;
-      border-radius: var(--radius-full);
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: var(--white);
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-    }
-
-    .btn-secondary {
-      background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-      color: var(--white);
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
-    }
-
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .btn-outline:hover {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    .btn-lg {
-      padding: 16px 32px;
-      font-size: 16px;
-    }
-
-    .btn-full {
-      width: 100%;
-    }
-
-    /* ========== NAVBAR ========== */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      padding: 15px 0;
-    }
-
-    .navbar .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .logo span {
-      color: var(--secondary);
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .nav-link {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--gray-700);
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover {
-      color: var(--primary);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      color: var(--dark);
-    }
-
-    .hide-mobile {
-      display: inline-flex;
-    }
-
-    @media (max-width: 900px) {
-      .nav-menu, .hide-mobile {
-        display: none;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    /* ========== HERO ========== */
-    .hero {
-      padding: 140px 0 80px;
-      background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 50%, #fffbeb 100%);
-      overflow: hidden;
-    }
-
-    .hero .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .hero-content {
-      max-width: 560px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      color: var(--white);
-      font-size: 13px;
-      font-weight: 600;
-      border-radius: var(--radius-full);
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--dark);
-      margin-bottom: 20px;
-    }
-
-    .highlight {
-      background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-text {
-      font-size: 18px;
-      color: var(--gray-500);
-      margin-bottom: 32px;
-      line-height: 1.7;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-
-    .hero-badges {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .hero-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--gray-500);
-    }
-
-    .hero-badge i {
-      color: var(--secondary);
-      font-size: 18px;
-    }
-
-    .hero-image {
-      position: relative;
-    }
-
-    .hero-image img {
-      width: 100%;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .hero-image-badge {
-      position: absolute;
-      bottom: -20px;
-      left: -20px;
-      background: var(--white);
-      padding: 16px 24px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
-      text-align: center;
-    }
-
-    .hero-image-badge span:first-child {
-      display: block;
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .hero-image-badge span:last-child {
-      font-size: 14px;
-      color: var(--gray-500);
-    }
-
-    @media (max-width: 900px) {
-      .hero .container {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-content {
-        max-width: 100%;
-      }
-      .hero h1 {
-        font-size: 36px;
-      }
-      .hero-buttons {
-        justify-content: center;
-      }
-      .hero-badges {
-        justify-content: center;
-      }
-      .hero-image {
-        max-width: 500px;
-        margin: 0 auto;
-      }
-    }
-
-    /* ========== SECTIONS ========== */
-    .section {
-      padding: 80px 0;
-    }
-
-    .section-gray {
-      background: var(--gray-100);
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 50px;
-    }
-
-    .section-badge {
-      display: inline-block;
-      padding: 6px 16px;
-      background: rgba(37, 99, 235, 0.1);
-      color: var(--primary);
-      font-size: 13px;
-      font-weight: 600;
-      border-radius: var(--radius-full);
-      margin-bottom: 16px;
-    }
-
-    .section-header h2 {
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-
-    .section-header p {
-      font-size: 17px;
-      color: var(--gray-500);
-    }
-
-    @media (max-width: 768px) {
-      .section-header h2 {
-        font-size: 28px;
-      }
-    }
-
-    /* ========== VIDEO SECTION ========== */
-    .video-placeholder {
-      max-width: 800px;
-      margin: 0 auto;
-      aspect-ratio: 16/9;
-      background: linear-gradient(135deg, var(--gray-100), var(--white));
-      border: 2px dashed var(--gray-300);
-      border-radius: var(--radius-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .video-content {
-      text-align: center;
-      color: var(--gray-500);
-    }
-
-    .video-content i {
-      font-size: 64px;
-      color: var(--primary);
-      opacity: 0.5;
-      margin-bottom: 16px;
-    }
-
-    .video-content p {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--gray-700);
-    }
-
-    /* ========== CAROUSEL ========== */
-    .carousel-container {
-      overflow: hidden;
-      padding: 20px 0;
-    }
-
-    .carousel-track {
-      display: flex;
-      gap: 20px;
-      animation: scroll 30s linear infinite;
-      width: max-content;
-    }
-
-    .carousel-track:hover {
-      animation-play-state: paused;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .carousel-item {
-      flex-shrink: 0;
-      width: 300px;
-      height: 200px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .carousel-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .carousel-item:hover img {
-      transform: scale(1.1);
-    }
-
-    /* ========== DESTINATIONS ========== */
-    .destinations-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .destination-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .destination-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .destination-card.featured {
-      border: 3px solid var(--secondary);
-    }
-
-    .featured-badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--secondary);
-      color: var(--white);
-      padding: 6px 12px;
-      font-size: 12px;
-      font-weight: 700;
-      border-radius: var(--radius-full);
-      z-index: 10;
-    }
-
-    .destination-image {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .destination-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .destination-card:hover .destination-image img {
-      transform: scale(1.1);
-    }
-
-    .destination-tag {
-      position: absolute;
-      bottom: 12px;
-      left: 12px;
-      background: var(--white);
-      color: var(--primary);
-      padding: 4px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      border-radius: var(--radius-full);
-    }
-
-    .destination-content {
-      padding: 24px;
-    }
-
-    .destination-content h3 {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
-
-    .destination-content p {
-      font-size: 14px;
-      color: var(--gray-500);
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
-
-    .destination-info {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .destination-info span {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--gray-500);
-    }
-
-    .destination-info i {
-      color: var(--primary);
-    }
-
-    @media (max-width: 900px) {
-      .destinations-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-    }
-
-    /* ========== TABS ========== */
-    .tabs {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 24px;
-      background: var(--white);
-      border: 2px solid var(--gray-300);
-      border-radius: var(--radius-full);
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--gray-700);
-      transition: all 0.3s ease;
-    }
-
-    .tab-btn img {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .tab-btn.active,
-    .tab-btn:hover {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: var(--white);
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .itinerary-preview {
-      max-width: 600px;
-      margin: 0 auto;
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: var(--shadow-lg);
-      text-align: center;
-    }
-
-    .itinerary-preview h3 {
-      font-size: 24px;
-      color: var(--dark);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .itinerary-preview h3 i {
-      color: var(--primary);
-    }
-
-    .itinerary-preview > p {
-      color: var(--gray-500);
-      margin-bottom: 30px;
-    }
-
-    .itinerary-days {
-      text-align: left;
-      margin-bottom: 30px;
-    }
-
-    .day-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 14px 16px;
-      background: var(--gray-100);
-      border-radius: var(--radius);
-      margin-bottom: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .day-item:hover {
-      background: rgba(37, 99, 235, 0.1);
-    }
-
-    .day-item span {
-      background: var(--primary);
-      color: var(--white);
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      font-size: 12px;
-      font-weight: 700;
-      min-width: 60px;
-      text-align: center;
-    }
-
-    /* ========== HOTELS ========== */
-    .hotels-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-
-    .hotel-tab {
-      padding: 12px 24px;
-      background: var(--white);
-      border: 2px solid var(--gray-300);
-      border-radius: var(--radius-full);
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--gray-700);
-      transition: all 0.3s ease;
-    }
-
-    .hotel-tab.active,
-    .hotel-tab:hover {
-      background: var(--secondary);
-      border-color: var(--secondary);
-      color: var(--white);
-    }
-
-    .hotel-content {
-      display: none;
-    }
-
-    .hotel-content.active {
-      display: block;
-      animation: fadeIn 0.5s ease;
-    }
-
-    .hotels-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .hotel-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-    }
-
-    .hotel-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .hotel-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .hotel-info {
-      padding: 20px;
-    }
-
-    .hotel-stars {
-      display: flex;
-      gap: 2px;
-      margin-bottom: 8px;
-    }
-
-    .hotel-stars i {
-      color: var(--secondary);
-      font-size: 14px;
-    }
-
-    .hotel-info h4 {
-      font-size: 18px;
-      color: var(--dark);
-      margin-bottom: 4px;
-    }
-
-    .hotel-info p {
-      font-size: 13px;
-      color: var(--gray-500);
-    }
-
-    .info-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 40px;
-      padding: 16px 24px;
-      background: rgba(37, 99, 235, 0.1);
-      border-radius: var(--radius);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .info-box i {
-      font-size: 24px;
-      color: var(--primary);
-    }
-
-    .info-box p {
-      font-size: 14px;
-      color: var(--gray-700);
-    }
-
-    @media (max-width: 900px) {
-      .hotels-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="container">
-      <a href="#" class="logo">Expedições<span>2026</span></a>
-      <nav class="nav-menu">
-        <a href="#destinos" class="nav-link">Destinos</a>
-        <a href="#roteiro" class="nav-link">Roteiro</a>
-        <a href="#inclusos" class="nav-link">O que inclui</a>
-        <a href="#investimento" class="nav-link">Investimento</a>
-        <a href="#faq" class="nav-link">FAQ</a>
-      </nav>
-      <a href="#investimento" class="btn btn-primary hide-mobile">Garantir Vaga</a>
-      <button class="menu-toggle" id="menuToggle"><i class="bi bi-list"></i></button>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <span class="badge"><i class="bi bi-geo-alt-fill"></i> Expedições 2026</span>
-        <h1>Viaje para lugares <span class="highlight">extraordinários</span> com um grupo seleto</h1>
-        <p class="hero-text">Guatemala, Peru e Tailândia te esperam. Expedições exclusivas com máximo de 18 pessoas, roteiros imersivos e experiências transformadoras.</p>
-        <div class="hero-buttons">
-          <a href="#destinos" class="btn btn-primary btn-lg"><i class="bi bi-compass"></i> Explorar Destinos</a>
-          <a href="#investimento" class="btn btn-outline btn-lg"><i class="bi bi-calendar-check"></i> Reservar</a>
-        </div>
-        <div class="hero-badges">
-          <div class="hero-badge"><i class="bi bi-people-fill"></i><span>Máx. 18 pessoas</span></div>
-          <div class="hero-badge"><i class="bi bi-shield-check"></i><span>Guia Brasileiro</span></div>
-          <div class="hero-badge"><i class="bi bi-star-fill"></i><span>Experiência Premium</span></div>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=600&h=500&fit=crop" alt="Expedição">
-        <div class="hero-image-badge">
-          <span>3 Destinos</span>
-          <span>Incríveis</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VIDEO -->
-  <section class="section section-gray">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Assista e se inspire</span>
-        <h2>Imagine você explorando <span class="highlight">paisagens incríveis</span> 🌎</h2>
-        <p>Cada expedição é uma jornada única. Veja um pouco do que te espera.</p>
-      </div>
-      <div class="video-placeholder">
-        <div class="video-content">
-          <i class="bi bi-play-circle-fill"></i>
-          <p>Vídeo em breve</p>
-          <span>Estamos preparando algo especial</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GRUPOS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Nossos últimos grupos</span>
-        <h2>Conexões que duram <span class="highlight">uma vida inteira</span></h2>
-        <p>Veja momentos das nossas expedições anteriores</p>
-      </div>
-    </div>
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <!-- Duplicados -->
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=350&h=250&fit=crop" alt="Grupo"></div>
-        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=350&h=250&fit=crop" alt="Grupo"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DESTINOS -->
-  <section class="section section-gray" id="destinos">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Expedições 2026</span>
-        <h2>Três destinos. <span class="highlight">Infinitas memórias.</span></h2>
-        <p>Escolha sua próxima aventura</p>
-      </div>
-      <div class="destinations-grid">
-        <div class="destination-card">
-          <div class="destination-image">
-            <img src="https://images.unsplash.com/photo-1608659597669-b45511779f93?w=500&h=350&fit=crop" alt="Guatemala">
-            <span class="destination-tag">América Central</span>
-          </div>
-          <div class="destination-content">
-            <h3>Guatemala</h3>
-            <p>Ruínas maias, vulcões ativos, lagos cristalinos e cultura milenar.</p>
-            <div class="destination-info">
-              <span><i class="bi bi-calendar3"></i> 2026</span>
-              <span><i class="bi bi-people"></i> Máx. 18</span>
-            </div>
-            <button class="btn btn-primary btn-full" onclick="openModal('modal-guatemala')">Ver Roteiro <i class="bi bi-arrow-right"></i></button>
-          </div>
-        </div>
-        <div class="destination-card featured">
-          <div class="featured-badge">Mais Popular</div>
-          <div class="destination-image">
-            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=500&h=350&fit=crop" alt="Peru">
-            <span class="destination-tag">América do Sul</span>
-          </div>
-          <div class="destination-content">
-            <h3>Peru</h3>
-            <p>Machu Picchu, Cusco, Vale Sagrado e a magia dos Andes.</p>
-            <div class="destination-info">
-              <span><i class="bi bi-calendar3"></i> 2026</span>
-              <span><i class="bi bi-people"></i> Máx. 18</span>
-            </div>
-            <button class="btn btn-primary btn-full" onclick="openModal('modal-peru')">Ver Roteiro <i class="bi bi-arrow-right"></i></button>
-          </div>
-        </div>
-        <div class="destination-card">
-  <div class="destination-image">
-    <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=500&h=350&fit=crop" alt="Tailândia">
-    <span class="destination-tag">Ásia</span>
-  </div>
-  <div class="destination-content">
-    <h3>Tailândia</h3>
-    <p>Templos milenares, Festival das Lanternas, praias paradisíacas e experiências únicas em 13 dias inesquecíveis.</p>
-    <div class="destination-info">
-      <span><i class="bi bi-calendar3"></i> 21/11 a 03/12</span>
-      <span><i class="bi bi-clock"></i> 13 dias</span>
-      <span><i class="bi bi-people"></i> Máx. 18</span>
-    </div>
-    <button class="btn btn-primary btn-full" onclick="openModal('modal-tailandia')">Ver Roteiro Completo <i class="bi bi-arrow-right"></i></button>
-  </div>
-</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROTEIRO -->
-  <section class="section" id="roteiro">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Dia a dia</span>
-        <h2>Roteiros <span class="highlight">planejados nos mínimos detalhes</span></h2>
-        <p>Clique em um destino para ver o roteiro</p>
-      </div>
-      <div class="tabs">
-        <button class="tab-btn active" data-tab="tab-guatemala">
-          <img src="https://images.unsplash.com/photo-1608659597669-b45511779f93?w=60&h=60&fit=crop" alt="Guatemala">
-          <span>Guatemala</span>
-        </button>
-        <button class="tab-btn" data-tab="tab-peru">
-          <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=60&h=60&fit=crop" alt="Peru">
-          <span>Peru</span>
-        </button>
-        <button class="tab-btn" data-tab="tab-tailandia">
-          <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=60&h=60&fit=crop" alt="Tailândia">
-          <span>Tailândia</span>
-        </button>
-      </div>
-      <div class="tab-content active" id="tab-guatemala">
-        <div class="itinerary-preview">
-          <h3><i class="bi bi-map"></i> Expedição Guatemala</h3>
-          <p>Descubra a terra dos Maias</p>
-          <div class="itinerary-days">
-            <div class="day-item"><span>Dia 1</span> Chegada na Cidade da Guatemala</div>
-            <div class="day-item"><span>Dia 2</span> Antigua Guatemala</div>
-            <div class="day-item"><span>Dia 3</span> Vulcão Pacaya</div>
-            <div class="day-item"><span>Dia 4</span> Lago Atitlán</div>
-            <div class="day-item"><span>...</span> E muito mais!</div>
-          </div>
-          <button class="btn btn-primary" onclick="openModal('modal-guatemala')">Ver Roteiro Completo <i class="bi bi-arrow-right"></i></button>
-        </div>
-      </div>
-      <div class="tab-content" id="tab-peru">
-        <div class="itinerary-preview">
-          <h3><i class="bi bi-map"></i> Expedição Peru</h3>
-          <p>Trilhe o caminho dos Incas</p>
-          <div class="itinerary-days">
-            <div class="day-item"><span>Dia 1</span> Chegada em Lima</div>
-            <div class="day-item"><span>Dia 2</span> Voo para Cusco</div>
-            <div class="day-item"><span>Dia 3</span> Vale Sagrado</div>
-            <div class="day-item"><span>Dia 4</span> Machu Picchu</div>
-            <div class="day-item"><span>...</span> E muito mais!</div>
-          </div>
-          <button class="btn btn-primary" onclick="openModal('modal-peru')">Ver Roteiro Completo <i class="bi bi-arrow-right"></i></button>
-        </div>
-      </div>
-      <div class="tab-content" id="tab-tailandia">
-        <div class="itinerary-preview">
-          <h3><i class="bi bi-map"></i> Expedição Tailândia</h3>
-          <p>Templos, praias e lanternas</p>
-          <div class="itinerary-days">
-            <div class="day-item"><span>Dia 1</span> Chegada em Bangkok</div>
-            <div class="day-item"><span>Dia 2</span> Templos de Bangkok</div>
-            <div class="day-item"><span>Dia 3</span> Mercado Flutuante</div>
-            <div class="day-item"><span>Dia 4</span> Chiang Mai</div>
-            <div class="day-item"><span>...</span> E muito mais!</div>
-          </div>
-          <button class="btn btn-primary" onclick="openModal('modal-tailandia')">Ver Roteiro Completo <i class="bi bi-arrow-right"></i></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOSPEDAGEM -->
-  <section class="section section-gray" id="hospedagem">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Conforto garantido</span>
-        <h2>Hospedagens <span class="highlight">selecionadas a dedo</span></h2>
-        <p>Hotéis 4 e 5 estrelas em localizações privilegiadas</p>
-      </div>
-      <div class="hotels-tabs">
-        <button class="hotel-tab active" data-hotel="hotel-guatemala">Guatemala</button>
-        <button class="hotel-tab" data-hotel="hotel-peru">Peru</button>
-        <button class="hotel-tab" data-hotel="hotel-tailandia">Tailândia</button>
-      </div>
-      <div class="hotel-content active" id="hotel-guatemala">
-        <div class="hotels-grid">
-          <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=280&fit=crop" alt="Hotel">
-            <div class="hotel-info">
-              <div class="hotel-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-              <h4>Antigua Guatemala</h4>
-              <p>Hotel boutique no centro histórico</p>
-            </div>
-          </div>
-          <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=280&fit=crop" alt="Hotel">
-            <div class="hotel-info">
-              <div class="hotel-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-              <h4>Lago Atitlán</h4>
-              <p>Resort com vista para o lago</p>
-            </div>
-          </div>
-          <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=280&fit=crop" alt="Hotel">
-            <div class="hotel-info">
-              <div class="hotel-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-              <h4>Flores / Tikal</h4>
-              <p>Hotel próximo às ruínas maias</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hotel-content" id="hotel-peru">
-        <div class="hotels-grid">
-          <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?w=400&h=280&fit=crop" alt="Hotel">
-            <div class="hotel-info">
-              <div class="hotel-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-              <h4>Lima - Miraflores</h4>
-              <p>Hotel 5 estrelas à beira-mar</p>
-            </div>
-          </div>
-          <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=400&h=280&fit=crop" alt="Hotel">
-            <div class="hotel-info">
-              <div class="hotel-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-              <h4>Cusco</h4>
-              <p>Hotel colonial no centro histórico</p>
-            </div>
-          </div>
-          <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=280&fit=crop" alt="Hotel">
-            <div class="hotel-info">
-              <div class="hotel-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-              <h4>Vale Sagrado</h4>
-              <p>Resort nas montanhas andinas</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hotel-content" id="hotel-tailandia">
-        <div class="hotels-grid">
-          <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400&h=280&fit=crop" alt="Hotel">
-            <div class="hotel-info">
-              <div class="hotel-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-              <h4>Bangkok</h4>
-              <p>Hotel 5 estrelas no centro</p>
-            </div>
-          </div>
-          <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=400&h=280&fit=crop" alt="Hotel">
-            <div class="hotel-info">
-              <div class="hotel-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-              <h4>Chiang Mai</h4>
-              <p>Resort tradicional tailandês</p>
-            </div>
-          </div>
-          <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=400&h=280&fit=crop" alt="Hotel">
-            <div class="hotel-info">
-              <div class="hotel-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-              <h4>Phi Phi Island</h4>
-              <p>Resort à beira da praia</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="info-box">
-        <i class="bi bi-info-circle"></i>
-        <p>Todos os hotéis incluem café da manhã. Quartos duplos com opção de individual.</p>
-      </div>
-    </div>
-  </section>  
-    <!-- O QUE ESTÁ INCLUSO -->
-  <section class="section" id="inclusos">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">✓ Tudo pensado para você</span>
-        <h2>O que está <span class="highlight">incluso</span> na expedição?</h2>
-      </div>
-      <div class="included-grid">
-        <div class="included-card">
-          <div class="included-icon"><i class="bi bi-airplane-fill"></i></div>
-          <h4>Transfers Aeroporto</h4>
-          <p>Transporte de chegada e saída</p>
-        </div>
-        <div class="included-card">
-          <div class="included-icon"><i class="bi bi-airplane-engines-fill"></i></div>
-          <h4>Voos Domésticos</h4>
-          <p>Todos os voos internos do roteiro</p>
-        </div>
-        <div class="included-card">
-          <div class="included-icon"><i class="bi bi-building"></i></div>
-          <h4>Hotéis 4-5 Estrelas</h4>
-          <p>Hospedagem premium com café</p>
-        </div>
-        <div class="included-card">
-          <div class="included-icon"><i class="bi bi-person-badge-fill"></i></div>
-          <h4>Líder Brasileiro</h4>
-          <p>Acompanhamento integral</p>
-        </div>
-        <div class="included-card">
-          <div class="included-icon"><i class="bi bi-ticket-perforated-fill"></i></div>
-          <h4>Ingressos</h4>
-          <p>Todas as atrações do roteiro</p>
-        </div>
-        <div class="included-card">
-          <div class="included-icon"><i class="bi bi-cup-hot-fill"></i></div>
-          <h4>Refeições</h4>
-          <p>Cafés da manhã + refeições especiais</p>
-        </div>
-        <div class="included-card">
-          <div class="included-icon"><i class="bi bi-bus-front-fill"></i></div>
-          <h4>Transportes</h4>
-          <p>Todos os deslocamentos</p>
-        </div>
-        <div class="included-card">
-          <div class="included-icon"><i class="bi bi-camera-fill"></i></div>
-          <h4>Fotos e Vídeos</h4>
-          <p>Registros com câmera e drone</p>
-        </div>
-        <div class="included-card">
-          <div class="included-icon"><i class="bi bi-whatsapp"></i></div>
-          <h4>Grupo WhatsApp</h4>
-          <p>Comunidade exclusiva</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- O QUE NÃO ESTÁ INCLUSO -->
-  <section class="section section-gray">
-    <div class="container">
-      <div class="section-header">
-        <h2>O que <span style="color: #ef4444;">não está</span> incluso?</h2>
-      </div>
-      <div class="not-included-list">
-        <div class="not-included-item"><i class="bi bi-x-circle-fill"></i><span>Voo internacional (ida e volta)</span></div>
-        <div class="not-included-item"><i class="bi bi-x-circle-fill"></i><span>Almoços e jantares (exceto mencionados)</span></div>
-        <div class="not-included-item"><i class="bi bi-x-circle-fill"></i><span>Seguro viagem</span></div>
-        <div class="not-included-item"><i class="bi bi-x-circle-fill"></i><span>Gastos pessoais</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LÍDER -->
-  <section class="section" id="lider">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Quem vai te guiar</span>
-        <h2>Líder da <span class="highlight">expedição</span></h2>
-      </div>
-      <div class="leader-card">
-        <div class="leader-photo">
-          <i class="bi bi-person-fill"></i>
-        </div>
-        <div class="leader-info">
-          <h3>Montegomere Abientar</h3>
-          <span class="leader-role">Líder de Expedição</span>
-          <p>Apaixonado por viagens e conexões autênticas, Montegomere será seu guia durante toda a expedição. Com experiência em liderar grupos internacionais, ele garante que cada momento seja inesquecível, seguro e transformador.</p>
-          <p>Sua missão é proporcionar viagens que vão além do turismo convencional, criando memórias e amizades que duram para sempre.</p>
-          <div class="leader-stats">
-            <div class="stat"><span>3</span><small>Expedições 2026</small></div>
-            <div class="stat"><span>18</span><small>Máx. por grupo</small></div>
-            <div class="stat"><span>100%</span><small>Dedicação</small></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEPOIMENTOS -->
-  <section class="section section-gray" id="depoimentos">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Experiências reais</span>
-        <h2>Quem já <span class="highlight">viajou com a gente</span></h2>
-        <p>Veja o que dizem os exploradores</p>
-      </div>
-    </div>
-    <div class="testimonials-container">
-      <div class="testimonials-track">
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop" alt="Foto">
-            <div>
-              <h4>Marina Costa</h4>
-              <span>Expedição Tailândia</span>
-            </div>
-            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-          </div>
-          <p>"Foi a melhor decisão que tomei! Viajei sozinha e voltei com amigos para a vida. A organização foi impecável!"</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop" alt="Foto">
-            <div>
-              <h4>Ricardo Souza</h4>
-              <span>Expedição Peru</span>
-            </div>
-            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-          </div>
-          <p>"Machu Picchu foi um sonho realizado! O grupo era incrível e o roteiro perfeito. Recomendo de olhos fechados!"</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop" alt="Foto">
-            <div>
-              <h4>Camila Ferreira</h4>
-              <span>Expedição Guatemala</span>
-            </div>
-            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-          </div>
-          <p>"A Guatemala superou todas as expectativas! Os vulcões, os lagos, a cultura maia... Tudo perfeito!"</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop" alt="Foto">
-            <div>
-              <h4>Felipe Mendes</h4>
-              <span>Expedição Tailândia</span>
-            </div>
-            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-          </div>
-          <p>"O Festival das Lanternas foi mágico! Nunca imaginei viver algo assim. A energia do grupo foi especial!"</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop" alt="Foto">
-            <div>
-              <h4>Juliana Alves</h4>
-              <span>Expedição Peru</span>
-            </div>
-            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-          </div>
-          <p>"Tinha medo de viajar sozinha, mas foi a experiência mais libertadora da minha vida!"</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop" alt="Foto">
-            <div>
-              <h4>Bruno Santos</h4>
-              <span>Expedição Guatemala</span>
-            </div>
-            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-          </div>
-          <p>"O Lago Atitlán é um dos lugares mais bonitos que já vi. Experiência 10/10!"</p>
-        </div>
-        <!-- Duplicados para loop -->
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop" alt="Foto">
-            <div>
-              <h4>Marina Costa</h4>
-              <span>Expedição Tailândia</span>
-            </div>
-            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-          </div>
-          <p>"Foi a melhor decisão que tomei! Viajei sozinha e voltei com amigos para a vida!"</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop" alt="Foto">
-            <div>
-              <h4>Ricardo Souza</h4>
-              <span>Expedição Peru</span>
-            </div>
-            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-          </div>
-          <p>"Machu Picchu foi um sonho realizado! Recomendo de olhos fechados!"</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INVESTIMENTO -->
-  <section class="section" id="investimento">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Investimento</span>
-        <h2>Quero embarcar nessa <span class="highlight">aventura!</span></h2>
-        <p>Escolha seu destino e garanta sua vaga</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="pricing-image">
-            <img src="https://images.unsplash.com/photo-1608659597669-b45511779f93?w=300&h=180&fit=crop" alt="Guatemala">
-          </div>
-          <h3>Guatemala</h3>
-          <p class="pricing-subtitle">Terra dos Maias</p>
-          <div class="pricing-value">
-            <span class="currency">USD</span>
-            <span class="amount">3.990</span>
-          </div>
-          <span class="pricing-info">por pessoa (quarto duplo)</span>
-          <ul class="pricing-features">
-            <li><i class="bi bi-check-circle-fill"></i> Roteiro completo</li>
-            <li><i class="bi bi-check-circle-fill"></i> Hotéis 4-5 estrelas</li>
-            <li><i class="bi bi-check-circle-fill"></i> Líder brasileiro</li>
-            <li><i class="bi bi-check-circle-fill"></i> Máx. 18 pessoas</li>
-          </ul>
-          <button class="btn btn-primary btn-full" onclick="openModal('modal-reserva')">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
-        </div>
-        <div class="pricing-card featured">
-          <div class="pricing-badge">Mais Popular</div>
-          <div class="pricing-image">
-            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=300&h=180&fit=crop" alt="Peru">
-          </div>
-          <h3>Peru</h3>
-          <p class="pricing-subtitle">Trilha dos Incas</p>
-          <div class="pricing-value">
-            <span class="currency">USD</span>
-            <span class="amount">3.990</span>
-          </div>
-          <span class="pricing-info">por pessoa (quarto duplo)</span>
-          <ul class="pricing-features">
-            <li><i class="bi bi-check-circle-fill"></i> Roteiro completo</li>
-            <li><i class="bi bi-check-circle-fill"></i> Hotéis 4-5 estrelas</li>
-            <li><i class="bi bi-check-circle-fill"></i> Líder brasileiro</li>
-            <li><i class="bi bi-check-circle-fill"></i> Máx. 18 pessoas</li>
-          </ul>
-          <button class="btn btn-secondary btn-full" onclick="openModal('modal-reserva')">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
-        </div>
-        <div class="pricing-card">
-          <div class="pricing-image">
-            <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=300&h=180&fit=crop" alt="Tailândia">
-          </div>
-          <h3>Tailândia</h3>
-          <p class="pricing-subtitle">Festival das Lanternas</p>
-          <div class="pricing-value">
-            <span class="currency">USD</span>
-            <span class="amount">3.990</span>
-          </div>
-          <span class="pricing-info">por pessoa (quarto duplo)</span>
-          <ul class="pricing-features">
-            <li><i class="bi bi-check-circle-fill"></i> Roteiro completo</li>
-            <li><i class="bi bi-check-circle-fill"></i> Hotéis 4-5 estrelas</li>
-            <li><i class="bi bi-check-circle-fill"></i> Líder brasileiro</li>
-            <li><i class="bi bi-check-circle-fill"></i> Máx. 18 pessoas</li>
-          </ul>
-          <button class="btn btn-primary btn-full" onclick="openModal('modal-reserva')">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
-        </div>
-      </div>
-      <div class="payment-info">
-        <div class="payment-box">
-          <h4><i class="bi bi-credit-card-2-front"></i> Formas de Pagamento</h4>
-          <div class="payment-options">
-            <div><strong>À vista</strong><p>PIX ou transferência</p></div>
-            <div><strong>Parcelado</strong><p>Entrada + parcelas</p></div>
-            <div><strong>Cartão</strong><p>Até 12x</p></div>
-          </div>
-        </div>
-        <div class="guarantee-box">
-          <i class="bi bi-shield-check"></i>
-          <div>
-            <strong>Garantia de 7 dias</strong>
-            <p>Devolvemos seu dinheiro se não estiver satisfeito</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section section-gray" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Dúvidas frequentes</span>
-        <h2>Perguntas e <span class="highlight">respostas</span></h2>
-      </div>
-      <div class="faq-container">
-        <div class="faq-item">
-          <button class="faq-question"><span>Não moro no Brasil, posso participar?</span><i class="bi bi-chevron-down"></i></button>
-          <div class="faq-answer"><p>Sim! A expedição começa no destino, então você pode vir de qualquer país.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>As passagens aéreas estão inclusas?</span><i class="bi bi-chevron-down"></i></button>
-          <div class="faq-answer"><p>As passagens internacionais não estão inclusas. Os voos domésticos dentro do destino estão inclusos.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>Como funciona a hospedagem em quartos duplos?</span><i class="bi bi-chevron-down"></i></button>
-          <div class="faq-answer"><p>Se estiver sozinho(a), ficará com outra pessoa do mesmo sexo. Casais ficam juntos. Quarto individual disponível com valor adicional.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>Posso viajar sozinho(a)?</span><i class="bi bi-chevron-down"></i></button>
-          <div class="faq-answer"><p>Claro! A maioria viaja sozinha. É perfeito para quem quer companhia!</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>Preciso falar inglês?</span><i class="bi bi-chevron-down"></i></button>
-          <div class="faq-answer"><p>Não! O líder é brasileiro e estará com você durante toda a viagem.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>O líder fica o tempo inteiro com a gente?</span><i class="bi bi-chevron-down"></i></button>
-          <div class="faq-answer"><p>Sim! 100% do tempo. Mas você pode dar uma volta sozinho se quiser.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>E se não atingir o grupo mínimo?</span><i class="bi bi-chevron-down"></i></button>
-          <div class="faq-answer"><p>A viagem será cancelada e 100% do valor será devolvido.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>Qual a vibe da viagem?</span><i class="bi bi-chevron-down"></i></button>
-          <div class="faq-answer"><p>Galera se conecta como amigos! Grupos pequenos para criar conexões verdadeiras. Não é excursão tradicional!</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="section cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Pronto para viver uma experiência <span class="highlight">transformadora?</span></h2>
-        <p>Guatemala, Peru ou Tailândia te esperam. Escolha seu destino!</p>
-        <a href="#investimento" class="btn btn-secondary btn-lg"><i class="bi bi-rocket-takeoff"></i> Garantir Minha Vaga</a>
-        <div class="cta-badges">
-          <span><i class="bi bi-shield-check"></i> Compra Segura</span>
-          <span><i class="bi bi-people"></i> Máx. 18 pessoas</span>
-          <span><i class="bi bi-arrow-repeat"></i> Garantia 7 dias</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <span class="logo">Expedições<span>2026</span></span>
-          <p>Viagens em grupo que transformam vidas.</p>
-        </div>
-        <div class="footer-links">
-          <a href="#destinos">Destinos</a>
-          <a href="#roteiro">Roteiro</a>
-          <a href="#investimento">Investimento</a>
-          <a href="#faq">FAQ</a>
-        </div>
-        <div class="footer-social">
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-whatsapp"></i></a>
-          <a href="#"><i class="bi bi-youtube"></i></a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Expedições 2026. Todos os direitos reservados.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- MODAIS -->
-  
-  <!-- Modal Guatemala -->
-  <div class="modal" id="modal-guatemala">
-    <div class="modal-overlay" onclick="closeModal('modal-guatemala')"></div>
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('modal-guatemala')"><i class="bi bi-x-lg"></i></button>
-      <div class="modal-header">
-        <h3>Roteiro Completo - Guatemala</h3>
-        <p>Terra dos Maias • 2026</p>
-      </div>
-      <div class="modal-body">
-        <div class="modal-day"><span>Dia 1</span><div><h4>Chegada na Cidade da Guatemala</h4><p>Recepção no aeroporto e transfer para o hotel.</p></div></div>
-        <div class="modal-day"><span>Dia 2</span><div><h4>Antigua Guatemala</h4><p>City tour pela cidade colonial mais bonita da América Central.</p></div></div>
-        <div class="modal-day"><span>Dia 3</span><div><h4>Vulcão Pacaya</h4><p>Trekking até o vulcão ativo. Vista espetacular!</p></div></div>
-        <div class="modal-day"><span>Dia 4</span><div><h4>Lago Atitlán</h4><p>Transfer para o lago mais bonito do mundo.</p></div></div>
-        <div class="modal-day"><span>Dia 5</span><div><h4>Vilas do Lago</h4><p>Exploração das vilas maias de barco.</p></div></div>
-        <div class="modal-day"><span>...</span><div><h4>E muito mais!</h4><p>Tikal, Semuc Champey, Rio Dulce...</p></div></div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary btn-full" onclick="openModal('modal-reserva'); closeModal('modal-guatemala');">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Peru -->
-  <div class="modal" id="modal-peru">
-    <div class="modal-overlay" onclick="closeModal('modal-peru')"></div>
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('modal-peru')"><i class="bi bi-x-lg"></i></button>
-      <div class="modal-header">
-        <h3>Roteiro Completo - Peru</h3>
-        <p>Trilha dos Incas • 2026</p>
-      </div>
-      <div class="modal-body">
-        <div class="modal-day"><span>Dia 1</span><div><h4>Chegada em Lima</h4><p>Recepção e transfer para Miraflores.</p></div></div>
-        <div class="modal-day"><span>Dia 2</span><div><h4>Lima - City Tour</h4><p>Centro histórico e gastronomia. Voo para Cusco.</p></div></div>
-        <div class="modal-day"><span>Dia 3</span><div><h4>Cusco - Aclimatação</h4><p>City tour e Sacsayhuamán.</p></div></div>
-        <div class="modal-day"><span>Dia 4</span><div><h4>Vale Sagrado</h4><p>Pisac, Ollantaytambo e Chinchero.</p></div></div>
-        <div class="modal-day"><span>Dia 5</span><div><h4>Machu Picchu</h4><p>O grande dia! Visita à cidade perdida.</p></div></div>
-        <div class="modal-day"><span>...</span><div><h4>E muito mais!</h4><p>Rainbow Mountain, Lago Titicaca...</p></div></div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary btn-full" onclick="openModal('modal-reserva'); closeModal('modal-peru');">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Tailândia -->
-  <div class="modal" id="modal-tailandia">
-    <div class="modal-overlay" onclick="closeModal('modal-tailandia')"></div>
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('modal-tailandia')"><i class="bi bi-x-lg"></i></button>
-      <div class="modal-header">
-        <h3>Roteiro Completo - Tailândia</h3>
-        <p>Festival das Lanternas • 2026</p>
-      </div>
-      <div class="modal-body">
-        <div class="modal-day"><span>Dia 1</span><div><h4>Chegada em Bangkok</h4><p>Recepção e encontro com o grupo.</p></div></div>
-        <div class="modal-day"><span>Dia 2</span><div><h4>Templos de Bangkok</h4><p>Grand Palace, Wat Pho, Wat Arun.</p></div></div>
-        <div class="modal-day"><span>Dia 3</span><div><h4>Mercado Flutuante</h4><p>Mercado do Trem e Mercado Flutuante.</p></div></div>
-        <div class="modal-day"><span>Dia 4</span><div><h4>Santuário dos Elefantes</h4><p>Interação ética com elefantes.</p></div></div>
-        <div class="modal-day"><span>Dia 5</span><div><h4>Festival das Lanternas</h4><p>Yee Peng Festival - momento mágico!</p></div></div>
-        <div class="modal-day"><span>...</span><div><h4>E muito mais!</h4><p>Phi Phi, Krabi, Maya Bay...</p></div></div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary btn-full" onclick="openModal('modal-reserva'); closeModal('modal-tailandia');">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Reserva -->
-  <div class="modal" id="modal-reserva">
-    <div class="modal-overlay" onclick="closeModal('modal-reserva')"></div>
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('modal-reserva')"><i class="bi bi-x-lg"></i></button>
-      <div class="modal-header">
-        <h3>Reservar Vaga</h3>
-        <p>Expedição 2026</p>
-      </div>
-      <div class="modal-body" style="text-align: center;">
-        <p style="margin-bottom: 20px;"><i class="bi bi-whatsapp" style="font-size: 40px; color: #25D366;"></i></p>
-        <p style="margin-bottom: 24px;">Clique no botão abaixo para falar diretamente conosco pelo WhatsApp!</p>
-        <a href="https://wa.me/5500000000000?text=Olá! Tenho interesse nas expedições 2026!" target="_blank" class="btn btn-whatsapp btn-full"><i class="bi bi-whatsapp"></i> Chamar no WhatsApp</a>
-        <div class="reservation-steps">
-          <h4>Próximos passos:</h4>
-          <ol>
-            <li>Envie mensagem pelo WhatsApp</li>
-            <li>Conversaremos sobre a viagem</li>
-            <li>Você recebe o contrato por email</li>
-            <li>Após assinatura, realize o pagamento</li>
-            <li>Entre no grupo exclusivo</li>
-            <li>Prepare as malas! 🧳</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ESTILOS ADICIONAIS (continuação) -->
-  <style>
-    /* ========== INCLUDED GRID ========== */
-    .included-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .included-card {
-      background: var(--white);
-      border: 2px solid var(--gray-100);
-      border-radius: var(--radius);
-      padding: 30px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .included-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .included-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-      font-size: 24px;
-      color: var(--primary);
-    }
-
-    .included-card h4 {
-      font-size: 16px;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-
-    .included-card p {
-      font-size: 13px;
-      color: var(--gray-500);
-    }
-
-    @media (max-width: 900px) {
-      .included-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .included-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ========== NOT INCLUDED ========== */
-    .not-included-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-    }
-
-    .not-included-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 20px;
-      background: rgba(239, 68, 68, 0.1);
-      border: 1px solid rgba(239, 68, 68, 0.2);
-      border-radius: var(--radius-full);
-      font-size: 14px;
-      color: var(--gray-700);
-    }
-
-    .not-included-item i {
-      color: #ef4444;
-    }
-
-    /* ========== LEADER ========== */
-    .leader-card {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 50px;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .leader-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 80px;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-
-    .leader-info h3 {
-      font-size: 28px;
-      color: var(--dark);
-      margin-bottom: 4px;
-    }
-
-    .leader-role {
-      display: inline-block;
-      padding: 4px 12px;
-      background: var(--secondary);
-      color: var(--white);
-      font-size: 12px;
-      font-weight: 600;
-      border-radius: var(--radius-full);
-      margin-bottom: 16px;
-    }
-
-    .leader-info p {
-      font-size: 15px;
-      color: var(--gray-500);
-      margin-bottom: 12px;
-      line-height: 1.7;
-    }
-
-    .leader-stats {
-      display: flex;
-      gap: 30px;
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 1px solid var(--gray-100);
-    }
-
-    .leader-stats .stat {
-      text-align: center;
-    }
-
-    .leader-stats .stat span {
-      display: block;
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .leader-stats .stat small {
-      font-size: 12px;
-      color: var(--gray-500);
-    }
-
-    @media (max-width: 768px) {
-      .leader-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px;
-      }
-      .leader-stats {
-        justify-content: center;
-      }
-    }
-
-    /* ========== TESTIMONIALS ========== */
-    .testimonials-container {
-      overflow: hidden;
-      padding: 20px 0;
-    }
-
-    .testimonials-track {
-      display: flex;
-      gap: 24px;
-      animation: scrollTestimonials 40s linear infinite;
-      width: max-content;
-    }
-
-    .testimonials-track:hover {
-      animation-play-state: paused;
-    }
-
-    @keyframes scrollTestimonials {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .testimonial-card {
-      flex-shrink: 0;
-      width: 350px;
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .testimonial-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .testimonial-header img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .testimonial-header h4 {
-      font-size: 15px;
-      color: var(--dark);
-      margin-bottom: 2px;
-    }
-
-    .testimonial-header span {
-      font-size: 12px;
-      color: var(--gray-500);
-    }
-
-    .testimonial-header .stars {
-      margin-left: auto;
-      color: var(--secondary);
-      font-size: 12px;
-    }
-
-    .testimonial-card > p {
-      font-size: 14px;
-      color: var(--gray-700);
-      line-height: 1.6;
-      font-style: italic;
-    }
-
-    /* ========== PRICING ========== */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-bottom: 50px;
-    }
-
-    .pricing-card {
-      background: var(--white);
-      border: 2px solid var(--gray-100);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      text-align: center;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .pricing-card.featured {
-      border-color: var(--secondary);
-      transform: scale(1.05);
-    }
-
-    .pricing-card.featured:hover {
-      transform: scale(1.05) translateY(-8px);
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--secondary);
-      color: var(--white);
-      padding: 4px 12px;
-      font-size: 11px;
-      font-weight: 700;
-      border-radius: var(--radius-full);
-      z-index: 10;
-    }
-
-    .pricing-image img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-
-    .pricing-card h3 {
-      font-size: 24px;
-      color: var(--dark);
-      margin: 20px 0 4px;
-    }
-
-    .pricing-subtitle {
-      font-size: 13px;
-      color: var(--gray-500);
-      margin-bottom: 16px;
-    }
-
-    .pricing-value {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 4px;
-      margin-bottom: 4px;
-    }
-
-    .pricing-value .currency {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .pricing-value .amount {
-      font-size: 42px;
-      font-weight: 800;
-      color: var(--dark);
-    }
-
-    .pricing-info {
-      font-size: 13px;
-      color: var(--gray-500);
-      margin-bottom: 20px;
-    }
-
-    .pricing-features {
-      text-align: left;
-      padding: 0 24px;
-      margin-bottom: 24px;
-    }
-
-    .pricing-features li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0;
-      font-size: 14px;
-      color: var(--gray-700);
-      border-bottom: 1px solid var(--gray-100);
-    }
-
-    .pricing-features li:last-child {
-      border-bottom: none;
-    }
-
-    .pricing-features i {
-      color: var(--success);
-    }
-
-    .pricing-card .btn {
-      margin: 0 24px 24px;
-      width: calc(100% - 48px);
-    }
-
-    @media (max-width: 900px) {
-      .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto 50px;
-      }
-      .pricing-card.featured {
-        transform: none;
-      }
-    }
-
-    /* ========== PAYMENT INFO ========== */
-    .payment-info {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 24px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .payment-box {
-      background: var(--white);
-      border: 2px solid var(--gray-100);
-      border-radius: var(--radius);
-      padding: 24px;
-    }
-
-    .payment-box h4 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 16px;
-      margin-bottom: 20px;
-      color: var(--dark);
-    }
-
-    .payment-box h4 i {
-      color: var(--primary);
-    }
-
-    .payment-options {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .payment-options > div {
-      text-align: center;
-      padding: 16px;
-      background: var(--gray-100);
-      border-radius: var(--radius);
-    }
-
-    .payment-options strong {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .payment-options p {
-      font-size: 12px;
-      color: var(--gray-500);
-    }
-
-    .guarantee-box {
-      background: rgba(16, 185, 129, 0.1);
-      border: 2px solid rgba(16, 185, 129, 0.2);
-      border-radius: var(--radius);
-      padding: 24px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .guarantee-box i {
-      font-size: 40px;
-      color: var(--success);
-    }
-
-    .guarantee-box strong {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 4px;
-    }
-
-    .guarantee-box p {
-      font-size: 13px;
-      color: var(--gray-500);
-    }
-
-    @media (max-width: 768px) {
-      .payment-info {
-        grid-template-columns: 1fr;
-      }
-      .payment-options {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ========== FAQ ========== */
-    .faq-container {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--gray-200);
-    }
-
-    .faq-question {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 0;
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--dark);
-      text-align: left;
-    }
-
-    .faq-question:hover {
-      color: var(--primary);
-    }
-
-    .faq-question i {
-      font-size: 18px;
-      color: var(--primary);
-      transition: transform 0.3s ease;
-    }
-
-    .faq-item.active .faq-question i {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 200px;
-    }
-
-    .faq-answer p {
-      padding-bottom: 20px;
-      font-size: 15px;
-      color: var(--gray-500);
-      line-height: 1.7;
-    }
-
-    /* ========== CTA SECTION ========== */
-    .cta-section {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: var(--white);
-    }
-
-    .cta-content {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .cta-content h2 {
-      font-size: 36px;
-      margin-bottom: 16px;
-    }
-
-    .cta-content h2 .highlight {
-      color: var(--secondary-light);
-      -webkit-text-fill-color: var(--secondary-light);
-    }
-
-    .cta-content > p {
-      font-size: 18px;
-      opacity: 0.9;
-      margin-bottom: 32px;
-    }
-
-    .cta-badges {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-
-    .cta-badges span {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    /* ========== FOOTER ========== */
-    .footer {
-      background: var(--dark);
-      color: var(--white);
-      padding: 60px 0 30px;
-    }
-
-    .footer-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .footer-brand .logo {
-      font-size: 24px;
-    }
-
-    .footer-brand p {
-      font-size: 14px;
-      color: var(--gray-500);
-      margin-top: 8px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-links a {
-      font-size: 14px;
-      color: var(--gray-300);
-    }
-
-    .footer-links a:hover {
-      color: var(--white);
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 12px;
-    }
-
-    .footer-social a {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      font-size: 18px;
-      color: var(--white);
-      transition: all 0.3s ease;
-    }
-
-    .footer-social a:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-bottom p {
-      font-size: 13px;
-      color: var(--gray-500);
-    }
-
-    @media (max-width: 768px) {
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    /* ========== MODAIS ========== */
-    .modal {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .modal.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-    }
-
-    .modal-box {
-      position: relative;
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      max-width: 550px;
-      width: 100%;
-      max-height: 85vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      animation: modalIn 0.3s ease;
-    }
-
-    @keyframes modalIn {
-      from { opacity: 0; transform: translateY(20px) scale(0.95); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--gray-100);
-      border-radius: 50%;
-      font-size: 16px;
-      color: var(--gray-500);
-      z-index: 10;
-      transition: all 0.3s ease;
-    }
-
-    .modal-close:hover {
-      background: var(--error);
-      color: var(--white);
-    }
-
-    .modal-header {
-      padding: 30px 30px 20px;
-      text-align: center;
-      border-bottom: 1px solid var(--gray-100);
-    }
-
-    .modal-header h3 {
-      font-size: 22px;
-      color: var(--dark);
-      margin-bottom: 4px;
-    }
-
-    .modal-header p {
-      font-size: 14px;
-      color: var(--gray-500);
-    }
-
-    .modal-body {
-      padding: 24px 30px;
-      overflow-y: auto;
-      flex: 1;
-    }
-
-    .modal-day {
-      display: flex;
-      gap: 16px;
-      padding: 16px;
-      background: var(--gray-100);
-      border-radius: var(--radius);
-      margin-bottom: 12px;
-    }
-
-    .modal-day span {
-      background: var(--primary);
-      color: var(--white);
-      padding: 6px 14px;
-      border-radius: var(--radius-full);
-      font-size: 12px;
-      font-weight: 700;
-      height: fit-content;
-    }
-
-    .modal-day h4 {
-      font-size: 15px;
-      color: var(--dark);
-      margin-bottom: 4px;
-    }
-
-    .modal-day p {
-      font-size: 13px;
-      color: var(--gray-500);
-    }
-
-    .modal-footer {
-      padding: 20px 30px 30px;
-      border-top: 1px solid var(--gray-100);
-    }
-
-    /* WhatsApp Button */
-    .btn-whatsapp {
-      background: #25D366;
-      color: var(--white);
-      padding: 16px 32px;
-      font-size: 16px;
-    }
-
-    .btn-whatsapp:hover {
-      background: #20bd5a;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    }
-
-    .reservation-steps {
-      text-align: left;
-      margin-top: 30px;
-      padding-top: 24px;
-      border-top: 1px solid var(--gray-100);
-    }
-
-    .reservation-steps h4 {
-      font-size: 14px;
-      color: var(--gray-500);
-      margin-bottom: 16px;
-    }
-
-    .reservation-steps ol {
-      counter-reset: step;
-    }
-
-    .reservation-steps li {
-      counter-increment: step;
-      position: relative;
-      padding-left: 36px;
-      padding-bottom: 14px;
-      font-size: 14px;
-      color: var(--gray-700);
-      border-left: 2px solid var(--gray-200);
-      margin-left: 10px;
-    }
-
-    .reservation-steps li:last-child {
-      border-left-color: transparent;
-      padding-bottom: 0;
-    }
-
-    .reservation-steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: -12px;
-      top: 0;
-      width: 22px;
-      height: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      color: var(--white);
-      border-radius: 50%;
-      font-size: 11px;
-      font-weight: 700;
-    }
-  </style>
-
-  <!-- JAVASCRIPT -->
-  <script>
-    // ===== TABS =====
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tabId = btn.dataset.tab;
-        
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        
-        btn.classList.add('active');
-        document.getElementById(tabId).classList.add('active');
-      });
-    });
-
-    // ===== HOTEL TABS =====
-    document.querySelectorAll('.hotel-tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const hotelId = btn.dataset.hotel;
-        
-        document.querySelectorAll('.hotel-tab').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.hotel-content').forEach(c => c.classList.remove('active'));
-        
-        btn.classList.add('active');
-        document.getElementById(hotelId).classList.add('active');
-      });
-    });
-
-    // ===== FAQ =====
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const isActive = item.classList.contains('active');
-        
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-        
-        if (!isActive) {
-          item.classList.add('active');
-        }
-      });
-    });
-
-    // ===== MODAIS =====
-    function openModal(modalId) {
-      document.getElementById(modalId).classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal(modalId) {
-      document.getElementById(modalId).classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    // Fechar modal com ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.modal.active').forEach(m => {
-          m.classList.remove('active');
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mutua Xperiences | Expedições Exclusivas</title>
+    <link rel="icon" href="/favicon.ico" type="image/svg+xml" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://019b0b1e-4784-7a89-8199-607dac24f50e.arena.site/" />
+    <meta property="og:title" content="Mutua Xperiences | Expedições Exclusivas" />
+    <meta property="og:description" content="Built with LMArena - Content is user-generated and unverified" />
+    <meta property="og:image" content="https://screenshot-taker-prod.weichiang.workers.dev/message/019b0b1e-4784-7a89-8199-607dac24f50e/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://019b0b1e-4784-7a89-8199-607dac24f50e.arena.site/" />
+    <meta property="twitter:title" content="Mutua Xperiences | Expedições Exclusivas" />
+    <meta property="twitter:description" content="Built with LMArena - Content is user-generated and unverified" />
+    <meta property="twitter:image" content="https://screenshot-taker-prod.weichiang.workers.dev/message/019b0b1e-4784-7a89-8199-607dac24f50e/og-image.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script>
+      const REPORT_SURVEY_ID = "019a46ef-f7dd-0000-58be-14fbb8b91d15";
+      const MESSAGE_ID = "019b0b1e-4784-7a89-8199-607dac24f50e";
+      const EVALUATION_SESSION_ID = "019b0b1e-3a86-73b1-96f5-cae974b42d61";
+      const getStorageKey = (prefix) => `${prefix}_${MESSAGE_ID}`;
+      const hasStorageKey = (prefix) => !!localStorage.getItem(getStorageKey(prefix));
+
+      // snippet below comes from posthog's documentation for running in html pages
+      // prettier-ignore
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+
+      const POSTHOG_API_KEY = "phc_LG7IJbVJqBsk584rbcKca0D5lV2vHguiijDrVji7yDM";
+      if (POSTHOG_API_KEY) {
+        posthog.init(POSTHOG_API_KEY, {
+          api_host: "/ph",
+          ui_host: "https://us.posthog.com",
+          person_profiles: "identified_only",
+          autocapture: false,
+          disable_session_recording: true,
+          before_send: (event) => {
+            if (event.event === "survey sent") {
+              // On the first survey answer sent, also send the report event
+              if (!hasStorageKey("code_reported")) {
+                localStorage.setItem(getStorageKey("code_reported"), "true");
+                posthog.capture?.("code_preview_banner_report");
+              }
+              // When the survey is completed, hide the report button
+              if (event.properties?.$survey_completed === true) {
+                localStorage.setItem(getStorageKey("survey_completed"), "true");
+                document.querySelector(".report-content-btn").style.display = "none";
+              }
+            }
+            return event;
+          },
         });
-        document.body.style.overflow = '';
+        posthog.register({ message_id: MESSAGE_ID, evaluation_session_id: EVALUATION_SESSION_ID });
       }
-    });
+    </script>
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    // ===== SMOOTH SCROLL =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+}
+
+/* Banner styles */
+.floating-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  will-change: transform, opacity;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100px) translateZ(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+.floating-banner.dismissed {
+  animation: slideOut 0.3s ease-out forwards;
+}
+
+@keyframes slideOut {
+  to {
+    transform: translateY(100px) translateZ(0);
+    opacity: 0;
+  }
+}
+
+.banner-padding {
+  padding: 10px 16px;
+}
+
+.banner-link-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.banner-logo {
+  display: flex;
+  align-items: center;
+  color: #2d2d2d;
+  flex-shrink: 0;
+}
+
+.banner-logo svg {
+  height: 28px;
+  width: auto;
+}
+
+.banner-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.banner-text {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.banner-upper-text {
+  color: #151617;
+  font-size: 14px;
+}
+
+.banner-lower-text {
+  color: #878c9f;
+  font-size: 10px;
+}
+
+.banner-action-container {
+  border-left: 1px solid rgba(45, 47, 53, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.action-btn:hover {
+  color: #2d2d2d;
+}
+
+/* Iframe container styles */
+.iframe-container {
+  flex: 1;
+  position: relative;
+  background: white;
+  overflow: hidden;
+  min-height: 0;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+    </style>
+  </head>
+  <body data-ryu-obtrusive-scrollbars="false">
+    <svg style="display: none">
+      <symbol
+        id="icon-flag"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528"
+        />
+      </symbol>
+      <symbol
+        id="icon-close"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </symbol>
+    </svg>
+
+    <div class="floating-banner" id="floating-banner">
+      <a
+        href="https://lmarena.ai/code"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="banner-link-wrapper banner-padding"
+        onclick="onCodePreviewBannerCTAClicked(event)"
+      >
+        <div class="banner-logo"><svg
+  width="325.235"
+  height="300"
+  viewBox="0 0 325.235 300"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g clipPath="url(#clip0_mark)">
+    <path
+      d="M325.196 45.8314C325.196 45.7153 325.196 45.5991 325.196 45.483V45.3282C325.196 41.554 323.319 38.8249 322.254 37.5088C321.035 35.9991 319.564 34.7411 318.209 33.7153C315.461 31.6443 311.822 29.5927 307.68 27.5991C299.3 23.5733 287.571 19.1991 273.365 15.1346C244.952 7.04431 205.836 -0.000854492 162.617 -0.000854492C119.399 -0.000854492 80.2636 7.04431 51.8317 15.154C37.6447 19.1991 25.8965 23.5927 17.5159 27.6185C13.374 29.612 9.73537 31.6637 6.98702 33.7346C5.63219 34.7604 4.16124 36.0185 2.9419 37.5282C1.91611 38.8249 0.0387092 41.554 0.0387092 45.3282C0.0387092 45.3475 0.0387092 45.3862 0.0387092 45.4056C0.0387092 45.4249 0.0387092 45.4637 0.0387092 45.483C0.0387092 45.5991 0.0387092 45.7153 0.0387092 45.8314H0V274.838H0.0387092C0.0387092 278.844 2.0903 281.689 3.67738 283.277C5.2451 284.844 7.04508 285.889 8.53539 286.625C11.5547 288.115 15.3869 289.296 19.4901 290.264C27.8513 292.257 39.5608 293.98 53.5349 295.393C81.6184 298.238 120.192 299.98 162.637 299.98C205.082 299.98 243.636 298.238 271.739 295.393C285.713 293.98 297.422 292.257 305.784 290.264C309.887 289.277 313.719 288.115 316.738 286.625C318.229 285.889 320.029 284.825 321.596 283.277C323.183 281.689 325.235 278.844 325.235 274.838H325.274V45.8314H325.235H325.196ZM173.243 186.889V160.741C173.243 152.322 176.282 144.038 182.262 138.135C187.566 132.889 194.591 129.696 202.294 129.696C212.107 129.696 220.817 134.864 226.275 142.877C230.01 148.354 231.772 154.954 231.772 161.593V185.186C214.043 186.154 194.243 186.773 173.224 186.928L173.243 186.889ZM173.243 100.741C173.243 92.3217 176.282 84.0379 182.262 78.1346C187.566 72.8895 194.591 69.6959 202.294 69.6959C212.107 69.6959 220.817 74.8637 226.275 82.8766C230.01 88.354 231.772 94.954 231.772 101.593V107.767C214.043 108.735 194.243 109.354 173.224 109.509V100.78L173.243 100.741ZM301.177 177.27C294.093 179.051 283.429 180.754 269.745 182.206C263.997 182.825 257.784 183.386 251.145 183.889V155.225C251.145 145.412 255.481 135.909 263.397 130.083C268.042 126.677 273.519 124.625 279.248 124.625C282.287 124.625 285.229 125.128 287.977 126.077C298.874 129.793 305.9 140.457 305.9 151.973V175.877C304.738 176.283 303.19 176.767 301.197 177.27H301.177ZM251.145 97.5862C251.145 88.4508 254.784 79.5282 261.694 73.5475C266.552 69.3475 272.494 66.7733 278.745 66.7733C285.926 66.7733 292.468 69.754 297.422 74.6508C303.035 80.2056 305.88 87.9669 305.88 95.8637V98.4572C304.719 98.8637 303.171 99.3475 301.177 99.8508C294.093 101.631 283.429 103.335 269.745 104.786C263.997 105.406 257.784 105.967 251.145 106.47V97.5862ZM47.9027 66.9669C59.0509 66.9669 68.6895 72.154 73.3734 81.3669C75.212 84.9862 75.9862 89.0314 75.9862 93.0959V106.606C68.6315 106.064 61.7799 105.444 55.4897 104.786C41.806 103.335 31.1416 101.631 24.0578 99.8508C22.0643 99.3475 20.5159 98.883 19.3546 98.4766C19.4514 81.0766 32.1867 66.9862 47.8833 66.9862L47.9027 66.9669ZM95.3408 185.264V161.612C95.3408 155.631 96.7344 149.67 99.8118 144.541C105.173 135.599 114.386 129.696 124.857 129.696C132.54 129.696 139.547 132.87 144.831 138.077C150.831 143.98 153.869 152.244 153.869 160.664V186.909C132.908 186.773 113.108 186.212 95.3215 185.264H95.3408ZM153.889 109.489C132.928 109.354 113.128 108.793 95.3408 107.844V101.612C95.3408 95.6314 96.7344 89.6701 99.8118 84.5411C105.173 75.5991 114.386 69.6959 124.857 69.6959C132.54 69.6959 139.547 72.8701 144.831 78.0766C150.831 83.9798 153.869 92.2443 153.869 100.664V109.489H153.889ZM19.3933 154.877C19.3933 138.173 32.1674 124.625 47.9414 124.625C53.6704 124.625 59.1284 126.657 63.7541 130.064C71.6701 135.87 76.0056 145.354 76.0056 155.167V184.044C68.6508 183.502 61.7993 182.883 55.509 182.225C41.8253 180.773 31.1609 179.07 24.0771 177.289C22.0836 176.786 20.5352 176.322 19.374 175.896L19.4127 154.896L19.3933 154.877ZM19.3546 274.838V274.064C19.374 274.315 19.3933 274.567 19.3933 274.838H19.3546ZM19.3933 234.231C19.3933 217.528 32.1674 203.98 47.9414 203.98C53.6704 203.98 59.1284 206.012 63.7541 209.418C71.6701 215.225 76.0056 224.709 76.0056 234.522V277.896C68.6508 277.373 61.7799 276.793 55.4897 276.154C41.806 274.76 31.1029 273.154 23.9997 271.451C22.0643 270.986 20.5352 270.541 19.374 270.173L19.4127 234.251L19.3933 234.231ZM95.3408 279.057V239.012C95.3408 233.031 96.7344 227.07 99.8118 221.941C105.173 212.999 114.386 207.096 124.857 207.096C132.54 207.096 139.547 210.27 144.831 215.477C150.831 221.38 153.869 229.644 153.869 238.064V280.625C132.908 280.509 113.108 279.948 95.3215 279.057H95.3408ZM173.243 280.606V238.064C173.243 229.664 176.282 221.38 182.282 215.477C187.585 210.27 194.572 207.096 202.256 207.096C212.746 207.096 221.959 212.999 227.32 221.941C230.397 227.07 231.791 233.031 231.791 239.012V278.941C214.062 279.87 194.262 280.431 173.243 280.586V280.606ZM305.88 274.838H305.842C305.842 274.567 305.842 274.315 305.88 274.064V274.838ZM301.255 271.451C294.151 273.154 283.448 274.78 269.765 276.154C264.016 276.735 257.784 277.277 251.145 277.76V234.58C251.145 224.767 255.481 215.264 263.397 209.438C268.042 206.031 273.519 203.98 279.248 203.98C282.287 203.98 285.229 204.483 287.977 205.431C298.874 209.148 305.9 219.812 305.9 231.328V270.154C304.738 270.541 303.209 270.967 301.274 271.431L301.255 271.451Z"
+      fill="currentColor"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0_mark">
+      <rect width="325.235" height="300" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+
+</div>
+        <div class="banner-text-container">
+          <p class="banner-text banner-upper-text">Built with LMArena</p>
+          <p class="banner-text banner-lower-text">Content is user-generated and unverified</p>
+        </div>
+      </a>
+      <div class="banner-action-container banner-padding">
+        <button
+          class="action-btn report-content-btn"
+          style="display: none"
+          onclick="reportContent(event)"
+          aria-label="Report content"
+        >
+          <svg class="report-icon" width="20" height="20"><use href="#icon-flag" /></svg>
+        </button>
+        <button class="action-btn" onclick="dismissBanner(event)" aria-label="Close banner">
+          <svg width="20" height="20"><use href="#icon-close" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="iframe-container">
+      <iframe
+        id="preview-iframe"
+        src="https://019b0b1e-4784-7a89-8199-607dac24f50e.arena.site/?embed=true"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-popups allow-popups-to-escape-sandbox allow-downloads allow-top-navigation-by-user-activation"
+        allow="accelerometer; autoplay; camera; encrypted-media; fullscreen; geolocation; gyroscope; microphone; midi; clipboard-read; clipboard-write; usb; vr; xr-spatial-tracking; screen-wake-lock; magnetometer; ambient-light-sensor; battery; gamepad; picture-in-picture; display-capture; bluetooth"
+        referrerpolicy="origin-when-cross-origin"
+      ></iframe>
+    </div>
+
+    <script>
+      const iframe = document.getElementById("preview-iframe");
+      iframe.addEventListener("load", () => iframe.focus());
+
+      document.addEventListener("DOMContentLoaded", () => {
+        if (!hasStorageKey("code_reported") || !hasStorageKey("survey_completed")) {
+          document.querySelector(".report-content-btn").style.display = "block";
         }
       });
-    });
 
-    // ===== MENU MOBILE =====
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.querySelector('.nav-menu');
+      function onCodePreviewBannerCTAClicked(event) {
+        posthog?.capture?.("code_preview_banner_cta_clicked");
+      }
 
-    if (menuToggle) {
-      menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-      });
-    }
-  </script>
+      function reportContent(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (!posthog || !posthog.capture || !posthog.setPersonProperties || !posthog.displaySurvey) return;
 
+        if (!hasStorageKey("survey_completed")) {
+          posthog.setPersonProperties?.({
+            last_reported_message_id: MESSAGE_ID,
+            last_report_timestamp: Date.now(),
+          });
+          posthog.displaySurvey?.(REPORT_SURVEY_ID, {
+            ignoreConditions: true,
+            ignoreDelay: true,
+          });
+        }
+      }
+
+      function dismissBanner(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        posthog?.capture?.("code_preview_banner_dismiss");
+
+        const banner = document.getElementById("floating-banner");
+        banner.classList.add("dismissed");
+        setTimeout(() => banner.remove(), 300);
+      }
+    </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"cfb6543e268d4ceb92c8170675caa481","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
