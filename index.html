@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mutua Xperiences | Expedições Exclusivas</title>
     <meta name="description" content="Expedições exclusivas para quem busca o extraordinário. Viagens transformadoras em grupos de até 18 pessoas.">
-    
+    <!-- Favicon (ícone na aba do navegador) -->
+<link rel="icon" type="image/png" href="https://i.postimg.cc/x1ZFMcQJ/Logo-Mutua-removebg-preview-(1).png">
+<link rel="apple-touch-icon" href="https://i.postimg.cc/x1ZFMcQJ/Logo-Mutua-removebg-preview-(1).png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2190,6 +2192,42 @@
     width: auto;
 }
 
+/* Badge de Vagas Restantes */
+.vagas-badge {
+    position: absolute;
+    top: 56px;
+    right: 16px;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: var(--color-white);
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    animation: pulse-vagas 2s infinite;
+}
+
+@keyframes pulse-vagas {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Ajuste para cards desativados com botão de lista de espera */
+.card-disabled .btn-outline {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.card-disabled .btn-outline:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
     </style>
 </head>
 
@@ -2319,7 +2357,7 @@
         </div>
     </section>
 
-<!-- <!-- ========== EXPEDIÇÕES ========== -->
+<!-- ========== EXPEDIÇÕES ========== -->
 <section class="section section-gray" id="expedicoes">
     <div class="container">
         <div class="section-header">
@@ -2329,7 +2367,7 @@
         </div>
         
         <div class="expeditions-grid">
-            <!-- Guatemala - ROTEIRO EM ELABORAÇÃO -->
+            <!-- Guatemala - LISTA DE ESPERA -->
             <div class="expedition-card card-disabled">
                 <div class="expedition-image">
                     <img src="https://www.adventureclub.com.br/wp-content/uploads/2024/02/guatemala-topo.jpg" alt="Guatemala - Terra dos Maias">
@@ -2345,37 +2383,16 @@
                         <span><i class="bi bi-calendar3"></i> 2026</span>
                         <span><i class="bi bi-people"></i> Máx. 18</span>
                     </div>
-                    <button class="btn btn-disabled btn-full" disabled>
-                        <i class="bi bi-hourglass-split"></i> Roteiro em elaboração
-                    </button>
+                    <a href="https://wa.me/5571993610035?text=Olá! Vim pelo site e quero entrar na LISTA DE ESPERA da expedição GUATEMALA 2026!" target="_blank" class="btn btn-outline btn-full">
+                        <i class="bi bi-bell"></i> Entrar na lista de espera
+                    </a>
                 </div>
             </div>
 
-            <!-- Peru - ROTEIRO EM ELABORAÇÃO -->
-            <div class="expedition-card featured card-disabled">
-                <div class="featured-badge"><i class="bi bi-star-fill"></i> Mais Popular</div>
-                <div class="expedition-image">
-                    <img src="https://aventurasnahistoria.com.br/wp-content/uploads/feedsync/macchu2.jpg" alt="Peru - Trilha dos Incas">
-                    <span class="expedition-tag">América do Sul</span>
-                    <div class="card-overlay"></div>
-                </div>
-                <div class="expedition-content">
-                    <span class="region">Peru</span>
-                    <h3>Trilha dos Incas</h3>
-                    <p class="expedition-subtitle">Machu Picchu e Vale Sagrado</p>
-                    <p>Machu Picchu, Cusco, Vale Sagrado e a magia dos Andes em uma experiência transformadora.</p>
-                    <div class="expedition-info">
-                        <span><i class="bi bi-calendar3"></i> 2026</span>
-                        <span><i class="bi bi-people"></i> Máx. 18</span>
-                    </div>
-                    <button class="btn btn-disabled btn-full" disabled>
-                        <i class="bi bi-hourglass-split"></i> Roteiro em elaboração
-                    </button>
-                </div>
-            </div>
-
-            <!-- Tailândia - ATIVO -->
-            <div class="expedition-card" onclick="openModal('modal-tailandia')">
+            <!-- Tailândia - ATIVO (DESTAQUE NO MEIO) -->
+            <div class="expedition-card featured" onclick="openModal('modal-tailandia')">
+                <div class="featured-badge"><i class="bi bi-fire"></i> Mais Procurada</div>
+                <span class="vagas-badge"><i class="bi bi-people-fill"></i> 8 vagas restantes</span>
                 <div class="expedition-image">
                     <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/5/2025/09/23121520/lantern-festival-scaled-1.jpeg" alt="Tailândia - Festival das Lanternas">
                     <span class="expedition-tag">Ásia</span>
@@ -2391,6 +2408,28 @@
                         <span><i class="bi bi-people"></i> Máx. 18</span>
                     </div>
                     <button class="btn btn-gold btn-full">Ver Roteiro <i class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Peru - LISTA DE ESPERA -->
+            <div class="expedition-card card-disabled">
+                <div class="expedition-image">
+                    <img src="https://aventurasnahistoria.com.br/wp-content/uploads/feedsync/macchu2.jpg" alt="Peru - Trilha dos Incas">
+                    <span class="expedition-tag">América do Sul</span>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="expedition-content">
+                    <span class="region">Peru</span>
+                    <h3>Trilha dos Incas</h3>
+                    <p class="expedition-subtitle">Machu Picchu e Vale Sagrado</p>
+                    <p>Machu Picchu, Cusco, Vale Sagrado e a magia dos Andes em uma experiência transformadora.</p>
+                    <div class="expedition-info">
+                        <span><i class="bi bi-calendar3"></i> 2026</span>
+                        <span><i class="bi bi-people"></i> Máx. 18</span>
+                    </div>
+                    <a href="https://wa.me/5571993610035?text=Olá! Vim pelo site e quero entrar na LISTA DE ESPERA da expedição PERU 2026!" target="_blank" class="btn btn-outline btn-full">
+                        <i class="bi bi-bell"></i> Entrar na lista de espera
+                    </a>
                 </div>
             </div>
         </div>
@@ -2458,28 +2497,28 @@
                 <p>Hotéis 4 e 5 estrelas em localizações privilegiadas. Conforto, qualidade e excelente custo-benefício.</p>
                 
                 <!-- Buttons horizontais -->
-                <div class="hotels-buttons-centered">
-                    <!-- Guatemala - Desativado -->
-                    <button class="hotel-btn-card disabled" disabled>
-                        <span class="hotel-btn-flag">🇬🇹</span>
-                        <span class="hotel-btn-name">Guatemala</span>
-                        <span class="hotel-btn-status disabled-text"><i class="bi bi-hourglass-split"></i> Em elaboração</span>
-                    </button>
-                    
-                    <!-- Peru - Desativado -->
-                    <button class="hotel-btn-card disabled" disabled>
-                        <span class="hotel-btn-flag">🇵🇪</span>
-                        <span class="hotel-btn-name">Peru</span>
-                        <span class="hotel-btn-status disabled-text"><i class="bi bi-hourglass-split"></i> Em elaboração</span>
-                    </button>
-                    
-                    <!-- Tailândia - Ativo -->
-                    <button class="hotel-btn-card" onclick="openModal('modal-hoteis-tailandia')">
-                        <span class="hotel-btn-flag">🇹🇭</span>
-                        <span class="hotel-btn-name">Tailândia</span>
-                        <span class="hotel-btn-status active-text"><i class="bi bi-eye-fill"></i> Ver hotéis</span>
-                    </button>
-                </div>
+<div class="hotels-buttons-centered">
+    <!-- Guatemala - Desativado -->
+    <button class="hotel-btn-card disabled" disabled>
+        <span class="hotel-btn-flag">🇬🇹</span>
+        <span class="hotel-btn-name">Guatemala</span>
+        <span class="hotel-btn-status disabled-text"><i class="bi bi-hourglass-split"></i> Em breve</span>
+    </button>
+    
+    <!-- Tailândia - Ativo (NO MEIO) -->
+    <button class="hotel-btn-card" onclick="openModal('modal-hoteis-tailandia')">
+        <span class="hotel-btn-flag">🇹🇭</span>
+        <span class="hotel-btn-name">Tailândia</span>
+        <span class="hotel-btn-status active-text"><i class="bi bi-eye-fill"></i> Ver hotéis</span>
+    </button>
+    
+    <!-- Peru - Desativado -->
+    <button class="hotel-btn-card disabled" disabled>
+        <span class="hotel-btn-flag">🇵🇪</span>
+        <span class="hotel-btn-name">Peru</span>
+        <span class="hotel-btn-status disabled-text"><i class="bi bi-hourglass-split"></i> Em breve</span>
+    </button>
+</div>
                 
                 <!-- Info -->
                 <div class="hotels-info-centered">
@@ -2886,17 +2925,16 @@ Suporte 24hrs, melhores roteiros de viagem, excelente indicações de profission
             </div>
             
             <div class="pricing-grid">
-    <!-- Guatemala -->
-    <div class="pricing-card card-disabled">
+    <!-- Guatemala - Lista de Espera -->
+    <div class="pricing-card">
         <div class="pricing-image">
             <img src="https://www.adventureclub.com.br/wp-content/uploads/2024/02/guatemala-topo.jpg" alt="Guatemala">
-            <div class="card-overlay"></div>
         </div>
         <h3>Guatemala</h3>
         <p class="pricing-subtitle">Terra dos Maias</p>
         <div class="pricing-value">
-            <span class="currency">USD</span>
-            <span class="amount">3.990</span>
+            <span class="currency">A partir de USD</span>
+            <span class="amount">3.500</span>
         </div>
         <span class="pricing-info">por pessoa (quarto duplo)</span>
         <ul class="pricing-features">
@@ -2905,38 +2943,14 @@ Suporte 24hrs, melhores roteiros de viagem, excelente indicações de profission
             <li><i class="bi bi-check-circle-fill"></i> Líder brasileiro</li>
             <li><i class="bi bi-check-circle-fill"></i> Máx. 18 pessoas</li>
         </ul>
-        <button class="btn btn-disabled btn-full" disabled>
-            <i class="bi bi-hourglass-split"></i> Roteiro em elaboração
-        </button>
+        <a href="https://wa.me/5571993610035?text=Olá! Vim pelo site e quero entrar na LISTA DE ESPERA da expedição GUATEMALA 2026!" target="_blank" class="btn btn-outline btn-full">
+            <i class="bi bi-bell"></i> Entrar na lista de espera
+        </a>
     </div>
 
-    <!-- Peru -->
-    <div class="pricing-card featured card-disabled">
-        <div class="pricing-badge">Mais Popular</div>
-        <div class="pricing-image">
-            <img src="https://aventurasnahistoria.com.br/wp-content/uploads/feedsync/macchu2.jpg" alt="Peru">
-            <div class="card-overlay"></div>
-        </div>
-        <h3>Peru</h3>
-        <p class="pricing-subtitle">Trilha dos Incas</p>
-        <div class="pricing-value">
-            <span class="currency">USD</span>
-            <span class="amount">3.990</span>
-        </div>
-        <span class="pricing-info">por pessoa (quarto duplo)</span>
-        <ul class="pricing-features">
-            <li><i class="bi bi-check-circle-fill"></i> Roteiro completo</li>
-            <li><i class="bi bi-check-circle-fill"></i> Hotéis 4-5 estrelas</li>
-            <li><i class="bi bi-check-circle-fill"></i> Líder brasileiro</li>
-            <li><i class="bi bi-check-circle-fill"></i> Máx. 18 pessoas</li>
-        </ul>
-        <button class="btn btn-disabled btn-full" disabled>
-            <i class="bi bi-hourglass-split"></i> Roteiro em elaboração
-        </button>
-    </div>
-
-    <!-- Tailândia -->
-    <div class="pricing-card">
+    <!-- Tailândia - DESTAQUE NO MEIO -->
+    <div class="pricing-card featured">
+        <div class="pricing-badge"><i class="bi bi-fire"></i> Mais Procurada</div>
         <div class="pricing-image">
             <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/5/2025/09/23121520/lantern-festival-scaled-1.jpeg" alt="Tailândia">
         </div>
@@ -2944,10 +2958,10 @@ Suporte 24hrs, melhores roteiros de viagem, excelente indicações de profission
         <p class="pricing-subtitle">Experiência Completa • 13 dias</p>
         <p class="pricing-dates"><i class="bi bi-calendar3"></i> 21/11 a 03/12/2026</p>
         <div class="pricing-value">
-            <span class="currency">USD</span>
-            <span class="amount">3.990</span>
+            <span class="currency">A partir de USD</span>
+            <span class="amount">3.500</span>
         </div>
-        <span class="pricing-info">por pessoa (quarto duplo)</span>
+        <span class="pricing-info">por pessoa (quarto duplo) • <strong style="color: #dc2626;">8 vagas restantes</strong></span>
         <ul class="pricing-features">
             <li><i class="bi bi-check-circle-fill"></i> 13 dias de roteiro completo</li>
             <li><i class="bi bi-check-circle-fill"></i> Festival das Lanternas (2 eventos!)</li>
@@ -2956,8 +2970,30 @@ Suporte 24hrs, melhores roteiros de viagem, excelente indicações de profission
         </ul>
         <button class="btn btn-gold btn-full" onclick="openModal('modal-reserva-tailandia')">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
     </div>
-</div>
 
+    <!-- Peru - Lista de Espera -->
+    <div class="pricing-card">
+        <div class="pricing-image">
+            <img src="https://aventurasnahistoria.com.br/wp-content/uploads/feedsync/macchu2.jpg" alt="Peru">
+        </div>
+        <h3>Peru</h3>
+        <p class="pricing-subtitle">Trilha dos Incas</p>
+        <div class="pricing-value">
+            <span class="currency">A partir de USD</span>
+            <span class="amount">3.500</span>
+        </div>
+        <span class="pricing-info">por pessoa (quarto duplo)</span>
+        <ul class="pricing-features">
+            <li><i class="bi bi-check-circle-fill"></i> Roteiro completo</li>
+            <li><i class="bi bi-check-circle-fill"></i> Hotéis 4-5 estrelas</li>
+            <li><i class="bi bi-check-circle-fill"></i> Líder brasileiro</li>
+            <li><i class="bi bi-check-circle-fill"></i> Máx. 18 pessoas</li>
+        </ul>
+        <a href="https://wa.me/5571993610035?text=Olá! Vim pelo site e quero entrar na LISTA DE ESPERA da expedição PERU 2026!" target="_blank" class="btn btn-outline btn-full">
+            <i class="bi bi-bell"></i> Entrar na lista de espera
+        </a>
+    </div>
+</div>
             <!-- Pagamento e Garantia -->
             <div class="payment-wrapper">
                 <div class="payment-box">
