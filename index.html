@@ -23,14 +23,14 @@
         }
 
         :root {
-            --color-primary: #6BA3BE;
-            --color-primary-dark: #5A8FA8;
-            --color-primary-light: #87CEEB;
-            --color-gold: #D4AF37;
-            --color-gold-dark: #B8960C;
-            --color-gold-light: #F4CF67;
-            --color-dark: #1a1a2e;
-            --color-gray-900: #1f2937;
+            --color-primary: #1C66AC;
+            --color-primary-dark: #0F4B89;
+            --color-primary-light: #2878C8;
+            --color-gold: #E28A33;
+            --color-gold-dark: #C67528;
+            --color-gold-light: #F4A54A;
+            --color-dark: #313154;
+            --color-gray-900: #223856;
             --color-gray-800: #27272a;
             --color-gray-700: #374151;
             --color-gray-600: #4b5563;
@@ -371,9 +371,9 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.95) 0%, 
-        rgba(255, 255, 255, 0.85) 50%, 
-        rgba(255, 255, 255, 0.7) 100%);
+        rgba(255, 255, 255, 0.616) 0%, 
+        rgba(255, 255, 255, 0.843) 50%, 
+        rgba(255, 255, 255, 0.612) 100%);
 }
 
 .hero .container {
@@ -1080,222 +1080,110 @@
             }
         }
 
-        /* ========== TESTIMONIALS CAROUSEL ========== */
-        .testimonials-container {
-            overflow: hidden;
-            padding: 20px 0;
-        }
+/* ========== TESTIMONIALS CAROUSEL ========== */
+.testimonials-wrapper {
+    overflow: hidden;
+    padding: 20px 0;
+    width: 100%;
+}
 
-        .testimonials-track {
-            display: flex;
-            gap: 24px;
-            animation: scrollTestimonials 45s linear infinite;
-            width: max-content;
-        }
+.testimonials-track {
+    display: flex;
+    gap: 24px;
+    animation: scrollTestimonials 40s linear infinite;
+    width: max-content;
+}
 
-        .testimonials-track:hover {
-            animation-play-state: paused;
-        }
+.testimonials-track:hover {
+    animation-play-state: paused;
+}
 
-        @keyframes scrollTestimonials {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+@keyframes scrollTestimonials {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
-        .testimonial-card {
-            flex-shrink: 0;
-            width: 380px;
-            background: var(--color-white);
-            border-radius: var(--radius);
-            padding: 28px;
-            box-shadow: var(--shadow);
-        }
+.testimonial-card {
+    flex-shrink: 0;
+    width: 380px;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
 
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 16px;
-        }
+.testimonial-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
 
-        .testimonial-header img {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+.testimonial-top img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
 
-        .testimonial-header h4 {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--color-gray-900);
-            margin-bottom: 2px;
-        }
+.testimonial-info {
+    flex: 1;
+}
 
-        .testimonial-header span {
-            font-size: 13px;
-            color: var(--color-primary);
-        }
+.testimonial-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: 2px;
+}
 
-        .testimonial-header .stars {
-            margin-left: auto;
-            color: var(--color-gold);
-            font-size: 14px;
-        }
+.testimonial-info span {
+    font-size: 13px;
+    color: var(--color-primary);
+}
 
-        .testimonial-card > p {
-            font-size: 15px;
-            color: var(--color-gray-600);
-            line-height: 1.7;
-            font-style: italic;
-        }
+.testimonial-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
 
-        /* ========== PRICING SECTION ========== */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 50px;
-        }
+.testimonial-right .stars {
+    color: var(--color-gold);
+    font-size: 14px;
+    display: flex;
+    gap: 2px;
+}
 
-        .pricing-card {
-            background: var(--color-white);
-            border: 2px solid var(--color-gray-200);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-        }
+.google-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--color-gray-100);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-        }
+.testimonial-text {
+    font-size: 15px;
+    color: var(--color-gray-600);
+    line-height: 1.7;
+    font-style: italic;
+}
 
-        .pricing-card.featured {
-            border-color: var(--color-gold);
-            transform: scale(1.03);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.03) translateY(-8px);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: var(--color-gold);
-            color: var(--color-white);
-            padding: 4px 12px;
-            font-size: 11px;
-            font-weight: 700;
-            border-radius: var(--radius-full);
-            z-index: 10;
-        }
-
-        .pricing-image {
-            height: 160px;
-            overflow: hidden;
-        }
-
-        .pricing-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .pricing-card h3 {
-            font-size: 26px;
-            color: var(--color-gray-900);
-            margin: 24px 0 4px;
-        }
-
-        .pricing-subtitle {
-            font-size: 14px;
-            color: var(--color-gold);
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .pricing-dates {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            font-size: 13px;
-            color: var(--color-primary);
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .pricing-value {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 4px;
-            margin-bottom: 4px;
-        }
-
-        .pricing-value .currency {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--color-primary);
-        }
-
-        .pricing-value .amount {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--color-gray-900);
-        }
-
-        .pricing-info {
-            font-size: 13px;
-            color: var(--color-gray-500);
-            margin-bottom: 24px;
-        }
-
-        .pricing-features {
-            text-align: left;
-            padding: 0 24px;
-            margin-bottom: 24px;
-        }
-
-        .pricing-features li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 0;
-            font-size: 14px;
-            color: var(--color-gray-700);
-            border-bottom: 1px solid var(--color-gray-100);
-        }
-
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-features i {
-            color: var(--color-success);
-        }
-
-        .pricing-card .btn {
-            margin: 0 24px 24px;
-            width: calc(100% - 48px);
-        }
-
-        @media (max-width: 900px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-                margin: 0 auto 50px;
-            }
-            .pricing-card.featured {
-                transform: none;
-            }
-        }
-
+@media (max-width: 768px) {
+    .testimonial-card {
+        width: 320px;
+        padding: 20px;
+    }
+}
         /* ========== PAYMENT INFO ========== */
         .payment-wrapper {
             display: grid;
@@ -1938,6 +1826,370 @@
             font-size: 12px;
             font-weight: 700;
         }
+
+/* ========== CARDS DESATIVADOS ========== */
+.card-disabled {
+    cursor: default;
+    opacity: 0.75;
+}
+
+.card-disabled:hover {
+    transform: none !important;
+    box-shadow: var(--shadow) !important;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 5;
+}
+
+.btn-disabled {
+    background: var(--color-gray-300) !important;
+    color: var(--color-gray-600) !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+}
+
+.btn-disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Hotéis - Status texts */
+.hotel-btn-status.disabled-text {
+    color: var(--color-gray-400);
+}
+
+.hotel-btn-status.active-text {
+    color: var(--color-gold);
+}
+/* ========== HOTELS SECTION CENTERED ========== */
+.hotels-section {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+.hotels-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.15;
+}
+
+.hotels-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotels-overlay {
+    display: none;
+}
+
+.hotels-content-centered {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 60px 40px;
+    max-width: 900px;
+}
+
+.hotels-content-centered h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 16px 0;
+}
+
+.hotels-content-centered > p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.hotels-buttons-centered {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.hotel-btn-card {
+    background: var(--color-white);
+    border: 2px solid var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 24px 32px;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-lg);
+}
+
+.hotel-btn-card:hover:not(.disabled) {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-gold);
+}
+
+.hotel-btn-card.disabled {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.6);
+    cursor: not-allowed;
+}
+
+.hotel-btn-card.disabled:hover {
+    transform: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.hotel-btn-flag {
+    font-size: 36px;
+}
+
+.hotel-btn-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-gray-900);
+}
+
+.hotel-btn-card.disabled .hotel-btn-name {
+    color: var(--color-gray-500);
+}
+
+.hotel-btn-status {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.hotel-btn-status.active-text {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+}
+
+.hotel-btn-status.disabled-text {
+    color: var(--color-gray-400);
+}
+
+.hotels-info-centered {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 14px 24px;
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    color: var(--color-white);
+}
+
+.hotels-info-centered i {
+    color: var(--color-gold);
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .hotels-section {
+        min-height: auto;
+    }
+    
+    .hotels-content-centered {
+        padding: 40px 20px;
+    }
+    
+    .hotels-content-centered h2 {
+        font-size: 28px;
+    }
+    
+    .hotels-buttons-centered {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hotel-btn-card {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+/* ========== PRICING GRID FIX ========== */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.pricing-card {
+    background: var(--color-white);
+    border: 2px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover:not(.card-disabled) {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.pricing-card.featured {
+    border-color: var(--color-gold);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--color-gold);
+    color: var(--color-white);
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    z-index: 10;
+}
+
+.pricing-image {
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pricing-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pricing-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--color-gray-900);
+    margin: 24px 0 4px;
+}
+
+.pricing-subtitle {
+    font-size: 14px;
+    color: var(--color-gold);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.pricing-dates {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.pricing-value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.pricing-value .currency {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.pricing-value .amount {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--color-gray-900);
+}
+
+.pricing-info {
+    font-size: 13px;
+    color: var(--color-gray-500);
+    margin-bottom: 24px;
+}
+
+.pricing-features {
+    text-align: left;
+    padding: 0 24px;
+    margin-bottom: 24px;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--color-gray-700);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-features i {
+    color: var(--color-success);
+}
+
+.pricing-card .btn {
+    margin: 0 24px 24px;
+    width: calc(100% - 48px);
+}
+
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto 50px;
+    }
+}
+
+/* Logo Cadastur */
+.cadastur-logo-img {
+    height: 60px;
+    width: auto;
+}
+
+.footer-brand {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-brand .logo {
+    margin-bottom: 16px;
+    justify-content: center;
+}
+
+.footer-brand .logo-image {
+    height: 60px;
+    width: auto;
+}
+
     </style>
 </head>
 
@@ -1950,14 +2202,8 @@
     <header class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <!-- PLACEHOLDER LOGO - Substitua pela imagem real -->
-                <!-- <img src="SUA-LOGO-AQUI.png" alt="Mutua Xperiences" class="logo-image"> -->
-                <div class="logo-placeholder">MX</div>
-                <div class="logo-text">
-                    <span class="brand">Mutua</span>
-                    <span class="tagline">Xperiences</span>
-                </div>
-            </a>
+    <img src="https://i.postimg.cc/TP39hxFs/1765563423015-019b13c6-99f2-700f-b24a-7f3981482981-removebg-preview.png" alt="Mutua Xperiences" class="logo-image">
+</a>
             
             <nav class="nav-menu">
                 <a href="#expedicoes" class="nav-link">Expedições</a>
@@ -2049,95 +2295,107 @@
             </div>
         </div>
         <div class="carousel-container">
-            <div class="carousel-track">
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400&h=280&fit=crop" alt="Viagem em grupo"></div>
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=400&h=280&fit=crop" alt="Amigos viajando"></div>
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=280&fit=crop" alt="Grupo de viagem"></div>
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=400&h=280&fit=crop" alt="Expedição"></div>
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=400&h=280&fit=crop" alt="Aventura"></div>
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=400&h=280&fit=crop" alt="Exploradores"></div>
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=400&h=280&fit=crop" alt="Viagem transformadora"></div>
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?w=400&h=280&fit=crop" alt="Conexões"></div>
-                <!-- Duplicados para loop infinito -->
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400&h=280&fit=crop" alt="Viagem em grupo"></div>
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=400&h=280&fit=crop" alt="Amigos viajando"></div>
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=280&fit=crop" alt="Grupo de viagem"></div>
-                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=400&h=280&fit=crop" alt="Expedição"></div>
-            </div>
+    <div class="carousel-track">
+        <!-- Imagens originais -->
+        <div class="carousel-item"><img src="https://peru-expeditions.org/wp-content/uploads/small-group_15.jpg" alt="Expedição em grupo"></div>
+        <div class="carousel-item"><img src="https://livingdreamsmexico.com/wp-content/uploads/2024/08/catamaranl-768x506.jpg" alt="Passeio de catamarã"></div>
+        <div class="carousel-item"><img src="https://livingdreamsmexico.com/wp-content/uploads/2023/08/CHICHEN-1024x674.jpg" alt="Chichen Itza"></div>
+        <div class="carousel-item"><img src="https://static.wixstatic.com/media/06c4d4_077c19fddc62449cbd45d2bd9e7cff6f~mv2.jpg/v1/fill/w_640,h_360,enc_auto/file.jpeg" alt="Grupo de viagem"></div>
+        <div class="carousel-item"><img src="https://static.wixstatic.com/media/06c4d4_4cb9e555757f43b78e0dcc4882688a19~mv2.jpg/v1/fit/w_562,h_494,q_90/06c4d4_4cb9e555757f43b78e0dcc4882688a19~mv2.jpg" alt="Aventura em grupo"></div>
+        <div class="carousel-item"><img src="https://media.bookmundi.com/tour/thailand-impressions-10-days-khao-sok-national-park-878513-1686800137.jpg?format=auto&quality=60&width=768" alt="Tailândia natureza"></div>
+        <div class="carousel-item"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/e5/f5/12/grand-palace.jpg?w=1200&h=1200&s=1" alt="Grand Palace Tailândia"></div>
+        <div class="carousel-item"><img src="https://www.grasshopperadventures.com/sites/default/files/styles/wysiwyg_large/public/2025-07/When%20and%20where%20is%20the%20Thailand%20Festival%20of%20Lights.jpg.jpg?itok=ZxpWbvbO" alt="Festival das Lanternas"></div>
+        
+        <!-- Duplicados para loop infinito -->
+        <div class="carousel-item"><img src="https://peru-expeditions.org/wp-content/uploads/small-group_15.jpg" alt="Expedição em grupo"></div>
+        <div class="carousel-item"><img src="https://livingdreamsmexico.com/wp-content/uploads/2024/08/catamaranl-768x506.jpg" alt="Passeio de catamarã"></div>
+        <div class="carousel-item"><img src="https://livingdreamsmexico.com/wp-content/uploads/2023/08/CHICHEN-1024x674.jpg" alt="Chichen Itza"></div>
+        <div class="carousel-item"><img src="https://static.wixstatic.com/media/06c4d4_077c19fddc62449cbd45d2bd9e7cff6f~mv2.jpg/v1/fill/w_640,h_360,enc_auto/file.jpeg" alt="Grupo de viagem"></div>
+        <div class="carousel-item"><img src="https://static.wixstatic.com/media/06c4d4_4cb9e555757f43b78e0dcc4882688a19~mv2.jpg/v1/fit/w_562,h_494,q_90/06c4d4_4cb9e555757f43b78e0dcc4882688a19~mv2.jpg" alt="Aventura em grupo"></div>
+        <div class="carousel-item"><img src="https://media.bookmundi.com/tour/thailand-impressions-10-days-khao-sok-national-park-878513-1686800137.jpg?format=auto&quality=60&width=768" alt="Tailândia natureza"></div>
+        <div class="carousel-item"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/e5/f5/12/grand-palace.jpg?w=1200&h=1200&s=1" alt="Grand Palace Tailândia"></div>
+        <div class="carousel-item"><img src="https://www.grasshopperadventures.com/sites/default/files/styles/wysiwyg_large/public/2025-07/When%20and%20where%20is%20the%20Thailand%20Festival%20of%20Lights.jpg.jpg?itok=ZxpWbvbO" alt="Festival das Lanternas"></div>
+        </div>
         </div>
     </section>
 
-    <!-- ========== EXPEDIÇÕES ========== -->
-    <section class="section section-gray" id="expedicoes">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Expedições 2026</span>
-                <h2>Escolha sua próxima <span class="highlight">aventura</span></h2>
-                <p>Clique no destino para ver o roteiro completo</p>
+<!-- <!-- ========== EXPEDIÇÕES ========== -->
+<section class="section section-gray" id="expedicoes">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Expedições 2026</span>
+            <h2>Escolha sua próxima <span class="highlight">aventura</span></h2>
+            <p>Clique no destino para ver o roteiro completo</p>
+        </div>
+        
+        <div class="expeditions-grid">
+            <!-- Guatemala - ROTEIRO EM ELABORAÇÃO -->
+            <div class="expedition-card card-disabled">
+                <div class="expedition-image">
+                    <img src="https://www.adventureclub.com.br/wp-content/uploads/2024/02/guatemala-topo.jpg" alt="Guatemala - Terra dos Maias">
+                    <span class="expedition-tag">América Central</span>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="expedition-content">
+                    <span class="region">Guatemala</span>
+                    <h3>Terra dos Maias</h3>
+                    <p class="expedition-subtitle">Ruínas, Vulcões e Cultura</p>
+                    <p>Ruínas maias, vulcões ativos, lagos cristalinos e cultura milenar em uma jornada inesquecível.</p>
+                    <div class="expedition-info">
+                        <span><i class="bi bi-calendar3"></i> 2026</span>
+                        <span><i class="bi bi-people"></i> Máx. 18</span>
+                    </div>
+                    <button class="btn btn-disabled btn-full" disabled>
+                        <i class="bi bi-hourglass-split"></i> Roteiro em elaboração
+                    </button>
+                </div>
             </div>
-            
-            <div class="expeditions-grid">
-                <!-- Guatemala -->
-                <div class="expedition-card" onclick="openModal('modal-guatemala')">
-                    <div class="expedition-image">
-                        <img src="https://www.adventureclub.com.br/wp-content/uploads/2024/02/guatemala-topo.jpg" alt="Guatemala - Terra dos Maias">
-                        <span class="expedition-tag">América Central</span>
-                    </div>
-                    <div class="expedition-content">
-                        <span class="region">Guatemala</span>
-                        <h3>Terra dos Maias</h3>
-                        <p class="expedition-subtitle">Ruínas, Vulcões e Cultura</p>
-                        <p>Ruínas maias, vulcões ativos, lagos cristalinos e cultura milenar em uma jornada inesquecível.</p>
-                        <div class="expedition-info">
-                            <span><i class="bi bi-calendar3"></i> 2026</span>
-                            <span><i class="bi bi-people"></i> Máx. 18</span>
-                        </div>
-                        <button class="btn btn-gold btn-full">Ver Roteiro <i class="bi bi-arrow-right"></i></button>
-                    </div>
-                </div>
 
-                <!-- Peru -->
-                <div class="expedition-card featured" onclick="openModal('modal-peru')">
-                    <div class="featured-badge"><i class="bi bi-star-fill"></i> Mais Popular</div>
-                    <div class="expedition-image">
-                        <img src="https://aventurasnahistoria.com.br/wp-content/uploads/feedsync/macchu2.jpg" alt="Peru - Trilha dos Incas">
-                        <span class="expedition-tag">América do Sul</span>
-                    </div>
-                    <div class="expedition-content">
-                        <span class="region">Peru</span>
-                        <h3>Trilha dos Incas</h3>
-                        <p class="expedition-subtitle">Machu Picchu e Vale Sagrado</p>
-                        <p>Machu Picchu, Cusco, Vale Sagrado e a magia dos Andes em uma experiência transformadora.</p>
-                        <div class="expedition-info">
-                            <span><i class="bi bi-calendar3"></i> 2026</span>
-                            <span><i class="bi bi-people"></i> Máx. 18</span>
-                        </div>
-                        <button class="btn btn-gold btn-full">Ver Roteiro <i class="bi bi-arrow-right"></i></button>
-                    </div>
+            <!-- Peru - ROTEIRO EM ELABORAÇÃO -->
+            <div class="expedition-card featured card-disabled">
+                <div class="featured-badge"><i class="bi bi-star-fill"></i> Mais Popular</div>
+                <div class="expedition-image">
+                    <img src="https://aventurasnahistoria.com.br/wp-content/uploads/feedsync/macchu2.jpg" alt="Peru - Trilha dos Incas">
+                    <span class="expedition-tag">América do Sul</span>
+                    <div class="card-overlay"></div>
                 </div>
+                <div class="expedition-content">
+                    <span class="region">Peru</span>
+                    <h3>Trilha dos Incas</h3>
+                    <p class="expedition-subtitle">Machu Picchu e Vale Sagrado</p>
+                    <p>Machu Picchu, Cusco, Vale Sagrado e a magia dos Andes em uma experiência transformadora.</p>
+                    <div class="expedition-info">
+                        <span><i class="bi bi-calendar3"></i> 2026</span>
+                        <span><i class="bi bi-people"></i> Máx. 18</span>
+                    </div>
+                    <button class="btn btn-disabled btn-full" disabled>
+                        <i class="bi bi-hourglass-split"></i> Roteiro em elaboração
+                    </button>
+                </div>
+            </div>
 
-                <!-- Tailândia -->
-                <div class="expedition-card" onclick="openModal('modal-tailandia')">
-                    <div class="expedition-image">
-                        <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/5/2025/09/23121520/lantern-festival-scaled-1.jpeg" alt="Tailândia - Festival das Lanternas">
-                        <span class="expedition-tag">Ásia</span>
+            <!-- Tailândia - ATIVO -->
+            <div class="expedition-card" onclick="openModal('modal-tailandia')">
+                <div class="expedition-image">
+                    <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/5/2025/09/23121520/lantern-festival-scaled-1.jpeg" alt="Tailândia - Festival das Lanternas">
+                    <span class="expedition-tag">Ásia</span>
+                </div>
+                <div class="expedition-content">
+                    <span class="region">Tailândia</span>
+                    <h3>Festival das Lanternas</h3>
+                    <p class="expedition-subtitle">Templos, Praias e Magia</p>
+                    <p>Templos milenares, Festival das Lanternas, praias paradisíacas e experiências únicas em 13 dias.</p>
+                    <div class="expedition-info">
+                        <span class="gold"><i class="bi bi-calendar3"></i> 21/11 a 03/12</span>
+                        <span class="gold"><i class="bi bi-clock"></i> 13 dias</span>
+                        <span><i class="bi bi-people"></i> Máx. 18</span>
                     </div>
-                    <div class="expedition-content">
-                        <span class="region">Tailândia</span>
-                        <h3>Festival das Lanternas</h3>
-                        <p class="expedition-subtitle">Templos, Praias e Magia</p>
-                        <p>Templos milenares, Festival das Lanternas, praias paradisíacas e experiências únicas em 13 dias.</p>
-                        <div class="expedition-info">
-                            <span class="gold"><i class="bi bi-calendar3"></i> 21/11 a 03/12</span>
-                            <span class="gold"><i class="bi bi-clock"></i> 13 dias</span>
-                            <span><i class="bi bi-people"></i> Máx. 18</span>
-                        </div>
-                        <button class="btn btn-gold btn-full">Ver Roteiro <i class="bi bi-arrow-right"></i></button>
-                    </div>
+                    <button class="btn btn-gold btn-full">Ver Roteiro <i class="bi bi-arrow-right"></i></button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ========== DIFERENCIAIS ========== -->
     <section class="section" id="diferenciais">
@@ -2183,41 +2441,55 @@
         </div>
     </section>
 
-    <!-- ========== HOTÉIS ========== -->
-    <section class="section section-gray" id="hoteis">
-        <div class="container">
-            <div class="hotels-card">
-                <div class="hotels-image">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=500&fit=crop" alt="Hotéis de Luxo">
+<!-- ========== HOTÉIS ========== -->
+<section class="section section-gray" id="hoteis">
+    <div class="container">
+        <div class="hotels-section">
+            <!-- Background Image -->
+            <div class="hotels-background">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80" alt="Hotéis de Luxo">
+                <div class="hotels-overlay"></div>
+            </div>
+            
+            <!-- Content -->
+            <div class="hotels-content-centered">
+                <span class="section-badge" style="background: rgba(255,255,255,0.2); color: white;">Conforto garantido</span>
+                <h2>Hospedagens selecionadas <span style="color: var(--color-gold);">a dedo</span></h2>
+                <p>Hotéis 4 e 5 estrelas em localizações privilegiadas. Conforto, qualidade e excelente custo-benefício.</p>
+                
+                <!-- Buttons horizontais -->
+                <div class="hotels-buttons-centered">
+                    <!-- Guatemala - Desativado -->
+                    <button class="hotel-btn-card disabled" disabled>
+                        <span class="hotel-btn-flag">🇬🇹</span>
+                        <span class="hotel-btn-name">Guatemala</span>
+                        <span class="hotel-btn-status disabled-text"><i class="bi bi-hourglass-split"></i> Em elaboração</span>
+                    </button>
+                    
+                    <!-- Peru - Desativado -->
+                    <button class="hotel-btn-card disabled" disabled>
+                        <span class="hotel-btn-flag">🇵🇪</span>
+                        <span class="hotel-btn-name">Peru</span>
+                        <span class="hotel-btn-status disabled-text"><i class="bi bi-hourglass-split"></i> Em elaboração</span>
+                    </button>
+                    
+                    <!-- Tailândia - Ativo -->
+                    <button class="hotel-btn-card" onclick="openModal('modal-hoteis-tailandia')">
+                        <span class="hotel-btn-flag">🇹🇭</span>
+                        <span class="hotel-btn-name">Tailândia</span>
+                        <span class="hotel-btn-status active-text"><i class="bi bi-eye-fill"></i> Ver hotéis</span>
+                    </button>
                 </div>
-                <div class="hotels-content">
-                    <span class="section-badge">Conforto garantido</span>
-                    <h3>Hospedagens selecionadas a dedo</h3>
-                    <p>Hotéis 4 e 5 estrelas em localizações privilegiadas. Conforto, qualidade e excelente custo-benefício.</p>
-                    
-                    <div class="hotels-buttons">
-                        <button class="hotel-btn" onclick="openModal('modal-hoteis-guatemala')">
-                            <span>🇬🇹 Hotéis Guatemala</span>
-                            <i class="bi bi-chevron-right"></i>
-                        </button>
-                        <button class="hotel-btn" onclick="openModal('modal-hoteis-peru')">
-                            <span>🇵🇪 Hotéis Peru</span>
-                            <i class="bi bi-chevron-right"></i>
-                        </button>
-                        <button class="hotel-btn" onclick="openModal('modal-hoteis-tailandia')">
-                            <span>🇹🇭 Hotéis Tailândia</span>
-                            <i class="bi bi-chevron-right"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="hotels-info">
-                        <i class="bi bi-info-circle"></i>
-                        <p>Todos os hotéis incluem café da manhã. Quartos duplos com opção de individual.</p>
-                    </div>
+                
+                <!-- Info -->
+                <div class="hotels-info-centered">
+                    <i class="bi bi-info-circle"></i>
+                    <span>Todos os hotéis incluem café da manhã. Quartos duplos com opção de individual.</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ========== O QUE ESTÁ INCLUSO ========== -->
     <section class="section">
@@ -2266,7 +2538,6 @@
             <div class="leader-card">
                 <div class="leader-photo">
                     <img src="https://i.ibb.co/q3KC0BXC/monty-lider.jpg" alt="Montgomery Silva - Líder de Expedição">
-                    <span class="leader-badge"><i class="bi bi-patch-check-fill"></i> Líder Oficial</span>
                 </div>
                 <div class="leader-info">
                     <h3>Montgomery Silva</h3>
@@ -2293,104 +2564,317 @@
         </div>
     </section>
 
-    <!-- ========== DEPOIMENTOS ========== -->
-    <section class="section" id="depoimentos">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Experiências reais</span>
-                <h2>O que dizem os <span class="highlight">viajantes</span></h2>
-                <p>Histórias reais de quem viveu a experiência Mutua</p>
-            </div>
+ <!-- ========== DEPOIMENTOS ========== -->
+<section class="section" id="depoimentos">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Experiências reais</span>
+            <h2>O que dizem os <span class="highlight">viajantes</span></h2>
+            <p>Avaliações reais de quem viveu a experiência Mutua</p>
         </div>
-        <div class="testimonials-container">
-            <div class="testimonials-track">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Maria Santos">
-                        <div>
-                            <h4>Maria Santos</h4>
-                            <span>Peru 2024</span>
-                        </div>
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+    </div>
+    
+    <div class="testimonials-wrapper">
+        <div class="testimonials-track">
+            <!-- Card 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-top">
+                    <img src="https://lh3.googleusercontent.com/geougc-cs/AMBA38sqGZ9aPaZPnA_Pi-hCktjRGmgkRku31b-HGlLGuD4NLSvy6buXTHkexLshbOQZzuy-_gnElmLgaBGQO2WHCYT3mbf3rDuOJUvzww774wNL0lwgy5C-8eqIVLf2Knphkx_SbuTf8g=s4096-w4096-h1944-rw" alt="Rafael Baiano">
+                    <div class="testimonial-info">
+                        <h4>Rafael Baiano</h4>
+                        <span></span>
                     </div>
-                    <p>"A viagem para o Peru mudou minha vida. Conexões incríveis, paisagens de tirar o fôlego e uma organização impecável. Voltei outra pessoa!"</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Pedro Oliveira">
-                        <div>
-                            <h4>Pedro Oliveira</h4>
-                            <span>Tailândia 2024</span>
+                    <div class="testimonial-right">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
                         </div>
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                    </div>
-                    <p>"Viajei sozinho e voltei com amigos para a vida. A Tailândia foi mágica, e o Festival das Lanternas é algo que guardarei para sempre no coração."</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Ana Carolina">
-                        <div>
-                            <h4>Ana Carolina</h4>
-                            <span>Guatemala 2024</span>
+                        <div class="google-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
                         </div>
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                     </div>
-                    <p>"A Guatemala superou todas as expectativas! Cultura maia, vulcões e o carinho do grupo. O Montgomery é um guia excepcional!"</p>
                 </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Ricardo Mendes">
-                        <div>
-                            <h4>Ricardo Mendes</h4>
-                            <span>Peru 2024</span>
-                        </div>
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                    </div>
-                    <p>"Fiz a viagem com minha esposa e foi a melhor decisão. Hotéis incríveis, passeios únicos e um grupo maravilhoso. Já estamos planejando a próxima!"</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Juliana Costa">
-                        <div>
-                            <h4>Juliana Costa</h4>
-                            <span>Tailândia 2024</span>
-                        </div>
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                    </div>
-                    <p>"Pela primeira vez me senti realmente viajando e não apenas turismo. A Mutua entende o que é proporcionar experiências verdadeiras!"</p>
-                </div>
-                
-                <!-- Duplicados para loop -->
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Maria Santos">
-                        <div>
-                            <h4>Maria Santos</h4>
-                            <span>Peru 2024</span>
-                        </div>
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                    </div>
-                    <p>"A viagem para o Peru mudou minha vida. Conexões incríveis, paisagens de tirar o fôlego e uma organização impecável!"</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Pedro Oliveira">
-                        <div>
-                            <h4>Pedro Oliveira</h4>
-                            <span>Tailândia 2024</span>
-                        </div>
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                    </div>
-                    <p>"Viajei sozinho e voltei com amigos para a vida. O Festival das Lanternas é algo que guardarei para sempre!"</p>
-                </div>
+                <p class="testimonial-text">"Gratidão por nosso roteiro incrível pela Nova Zelândia! Não vejo a hora de fazermos nosso novo roteiro! Equipe top, atendimento humano sem frescuras!
+"</p>
             </div>
+            
+            <!-- Card 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-top">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjUSRMXZJtc-MwevrcX5OABHPlFLv_OeOVeiKW_KIzeI-pDJ8pzj=w68-h68-p-rp-mo-br100" alt="Lougan Matos">
+                    <div class="testimonial-info">
+                        <h4>Lougan Matos</h4>
+                        <span></span>
+                    </div>
+                    <div class="testimonial-right">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="google-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Minhas melhores viagens foram planejadas pela equipe da Mutua 🫶🏽"</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-top">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjW59mVDhQ8JvEluBMYjYqURAv7U3rDOLsiliXVG26MG8gvfHKuAKw=w68-h68-p-rp-mo-br100" alt="Bruna Melo Palhares">
+                    <div class="testimonial-info">
+                        <h4>Bruna Melo Palhares</h4>
+                        <span></span>
+                    </div>
+                    <div class="testimonial-right">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="google-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Já utilizei diversas vezes os serviços da Mutua, além de serem super atenciosos, eles tem o melhor preço do mercado.
+Suporte 24hrs, melhores roteiros de viagem, excelente indicações de profissionais locais para auxilio no mundo todo e acomodações incríveis. Obrigada Mutua, por fazer das minhas viagens, sonhos realizados! Indico de olhos fechados :)"</p>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="testimonial-card">
+                <div class="testimonial-top">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjV6PiHv96382_NBsVboXbNCq2tCbb5vN7VjlfVYd_0Vr9EwQyhs=w68-h68-p-rp-mo-br100" alt="Frank Novais">
+                    <div class="testimonial-info">
+                        <h4>Frank Novais</h4>
+                        <span></span>
+                    </div>
+                    <div class="testimonial-right">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="google-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Uma agência de excelência para viajar com segurança e que conta com os melhores roteiros! Super atenciosos e antenados nas melhores dicas e no custo-benefício para o cliente de acordo com o que ele queira fazer na viagem. Viajarei mais vezes e recomendo muito!"</p>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="testimonial-card">
+                <div class="testimonial-top">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjVJejBgkRIxJC4Z-JSS_vwcn6PEgQhE_iQC1KSu69tRcr_sPzsP=w68-h68-p-rp-mo-br100" alt="Eduardo Ramirez">
+                    <div class="testimonial-info">
+                        <h4>Eduardo Ramirez</h4>
+                        <span></span>
+                    </div>
+                    <div class="testimonial-right">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="google-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Eles realmente se dedicam para oferecer a melhor experiência na sua viagem! Obrigado Mutua Xperiences.🙏"</p>
+            </div>
+            
+           <!-- ===== DUPLICADOS PARA LOOP INFINITO ===== -->
+            <!-- (Cópia exata dos 5 cards acima) -->
+            
+            <!-- Card 1 - Rafael Baiano (DUPLICADO) -->
+            <div class="testimonial-card">
+                <div class="testimonial-top">
+                    <img src="https://lh3.googleusercontent.com/geougc-cs/AMBA38sqGZ9aPaZPnA_Pi-hCktjRGmgkRku31b-HGlLGuD4NLSvy6buXTHkexLshbOQZzuy-_gnElmLgaBGQO2WHCYT3mbf3rDuOJUvzww774wNL0lwgy5C-8eqIVLf2Knphkx_SbuTf8g=s4096-w4096-h1944-rw" alt="Rafael Baiano">
+                    <div class="testimonial-info">
+                        <h4>Rafael Baiano</h4>
+                        <span></span>
+                    </div>
+                    <div class="testimonial-right">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="google-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Gratidão por nosso roteiro incrível pela Nova Zelândia! Não vejo a hora de fazermos nosso novo roteiro! Equipe top, atendimento humano sem frescuras!"</p>
+            </div>
+            
+            <!-- Card 2 - Lougan Matos (DUPLICADO) -->
+            <div class="testimonial-card">
+                <div class="testimonial-top">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjUSRMXZJtc-MwevrcX5OABHPlFLv_OeOVeiKW_KIzeI-pDJ8pzj=w68-h68-p-rp-mo-br100" alt="Lougan Matos">
+                    <div class="testimonial-info">
+                        <h4>Lougan Matos</h4>
+                        <span></span>
+                    </div>
+                    <div class="testimonial-right">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="google-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Minhas melhores viagens foram planejadas pela equipe da Mutua 🫶🏽"</p>
+            </div>
+            
+            <!-- Card 3 - Bruna Melo Palhares (DUPLICADO) -->
+            <div class="testimonial-card">
+                <div class="testimonial-top">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjW59mVDhQ8JvEluBMYjYqURAv7U3rDOLsiliXVG26MG8gvfHKuAKw=w68-h68-p-rp-mo-br100" alt="Bruna Melo Palhares">
+                    <div class="testimonial-info">
+                        <h4>Bruna Melo Palhares</h4>
+                        <span></span>
+                    </div>
+                    <div class="testimonial-right">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="google-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Já utilizei diversas vezes os serviços da Mutua, além de serem super atenciosos, eles tem o melhor preço do mercado. Suporte 24hrs, melhores roteiros de viagem, excelente indicações de profissionais locais para auxilio no mundo todo e acomodações incríveis. Obrigada Mutua, por fazer das minhas viagens, sonhos realizados! Indico de olhos fechados :)"</p>
+            </div>
+            
+            <!-- Card 4 - Frank Novais (DUPLICADO) -->
+            <div class="testimonial-card">
+                <div class="testimonial-top">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjV6PiHv96382_NBsVboXbNCq2tCbb5vN7VjlfVYd_0Vr9EwQyhs=w68-h68-p-rp-mo-br100" alt="Frank Novais">
+                    <div class="testimonial-info">
+                        <h4>Frank Novais</h4>
+                        <span></span>
+                    </div>
+                    <div class="testimonial-right">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="google-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Uma agência de excelência para viajar com segurança e que conta com os melhores roteiros! Super atenciosos e antenados nas melhores dicas e no custo-benefício para o cliente de acordo com o que ele queira fazer na viagem. Viajarei mais vezes e recomendo muito!"</p>
+            </div>
+            
+            <!-- Card 5 - Eduardo Ramirez (DUPLICADO) -->
+            <div class="testimonial-card">
+                <div class="testimonial-top">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjVJejBgkRIxJC4Z-JSS_vwcn6PEgQhE_iQC1KSu69tRcr_sPzsP=w68-h68-p-rp-mo-br100" alt="Eduardo Ramirez">
+                    <div class="testimonial-info">
+                        <h4>Eduardo Ramirez</h4>
+                        <span></span>
+                    </div>
+                    <div class="testimonial-right">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="google-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Eles realmente se dedicam para oferecer a melhor experiência na sua viagem! Obrigado Mutua Xperiences.🙏"</p>
+            </div>
+            
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- ========== INVESTIMENTO ========== -->
     <section class="section section-dark" id="investimento">
@@ -2402,71 +2886,77 @@
             </div>
             
             <div class="pricing-grid">
-                <!-- Guatemala -->
-                <div class="pricing-card">
-                    <div class="pricing-image">
-                        <img src="https://www.adventureclub.com.br/wp-content/uploads/2024/02/guatemala-topo.jpg" alt="Guatemala">
-                    </div>
-                    <h3>Guatemala</h3>
-                    <p class="pricing-subtitle">Terra dos Maias</p>
-                    <div class="pricing-value">
-                        <span class="currency">USD</span>
-                        <span class="amount">3.990</span>
-                    </div>
-                    <span class="pricing-info">por pessoa (quarto duplo)</span>
-                    <ul class="pricing-features">
-                        <li><i class="bi bi-check-circle-fill"></i> Roteiro completo</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Hotéis 4-5 estrelas</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Líder brasileiro</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Máx. 18 pessoas</li>
-                    </ul>
-                    <button class="btn btn-gold btn-full" onclick="openModal('modal-reserva-guatemala')">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
-                </div>
+    <!-- Guatemala -->
+    <div class="pricing-card card-disabled">
+        <div class="pricing-image">
+            <img src="https://www.adventureclub.com.br/wp-content/uploads/2024/02/guatemala-topo.jpg" alt="Guatemala">
+            <div class="card-overlay"></div>
+        </div>
+        <h3>Guatemala</h3>
+        <p class="pricing-subtitle">Terra dos Maias</p>
+        <div class="pricing-value">
+            <span class="currency">USD</span>
+            <span class="amount">3.990</span>
+        </div>
+        <span class="pricing-info">por pessoa (quarto duplo)</span>
+        <ul class="pricing-features">
+            <li><i class="bi bi-check-circle-fill"></i> Roteiro completo</li>
+            <li><i class="bi bi-check-circle-fill"></i> Hotéis 4-5 estrelas</li>
+            <li><i class="bi bi-check-circle-fill"></i> Líder brasileiro</li>
+            <li><i class="bi bi-check-circle-fill"></i> Máx. 18 pessoas</li>
+        </ul>
+        <button class="btn btn-disabled btn-full" disabled>
+            <i class="bi bi-hourglass-split"></i> Roteiro em elaboração
+        </button>
+    </div>
 
-                <!-- Peru -->
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Mais Popular</div>
-                    <div class="pricing-image">
-                        <img src="https://aventurasnahistoria.com.br/wp-content/uploads/feedsync/macchu2.jpg" alt="Peru">
-                    </div>
-                    <h3>Peru</h3>
-                    <p class="pricing-subtitle">Trilha dos Incas</p>
-                    <div class="pricing-value">
-                        <span class="currency">USD</span>
-                        <span class="amount">3.990</span>
-                    </div>
-                    <span class="pricing-info">por pessoa (quarto duplo)</span>
-                    <ul class="pricing-features">
-                        <li><i class="bi bi-check-circle-fill"></i> Roteiro completo</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Hotéis 4-5 estrelas</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Líder brasileiro</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Máx. 18 pessoas</li>
-                    </ul>
-                    <button class="btn btn-gold btn-full" onclick="openModal('modal-reserva-peru')">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
-                </div>
+    <!-- Peru -->
+    <div class="pricing-card featured card-disabled">
+        <div class="pricing-badge">Mais Popular</div>
+        <div class="pricing-image">
+            <img src="https://aventurasnahistoria.com.br/wp-content/uploads/feedsync/macchu2.jpg" alt="Peru">
+            <div class="card-overlay"></div>
+        </div>
+        <h3>Peru</h3>
+        <p class="pricing-subtitle">Trilha dos Incas</p>
+        <div class="pricing-value">
+            <span class="currency">USD</span>
+            <span class="amount">3.990</span>
+        </div>
+        <span class="pricing-info">por pessoa (quarto duplo)</span>
+        <ul class="pricing-features">
+            <li><i class="bi bi-check-circle-fill"></i> Roteiro completo</li>
+            <li><i class="bi bi-check-circle-fill"></i> Hotéis 4-5 estrelas</li>
+            <li><i class="bi bi-check-circle-fill"></i> Líder brasileiro</li>
+            <li><i class="bi bi-check-circle-fill"></i> Máx. 18 pessoas</li>
+        </ul>
+        <button class="btn btn-disabled btn-full" disabled>
+            <i class="bi bi-hourglass-split"></i> Roteiro em elaboração
+        </button>
+    </div>
 
-                <!-- Tailândia -->
-                <div class="pricing-card">
-                    <div class="pricing-image">
-                        <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/5/2025/09/23121520/lantern-festival-scaled-1.jpeg" alt="Tailândia">
-                    </div>
-                    <h3>Tailândia</h3>
-                    <p class="pricing-subtitle">Experiência Completa • 13 dias</p>
-                    <p class="pricing-dates"><i class="bi bi-calendar3"></i> 21/11 a 03/12/2026</p>
-                    <div class="pricing-value">
-                        <span class="currency">USD</span>
-                        <span class="amount">3.990</span>
-                    </div>
-                    <span class="pricing-info">por pessoa (quarto duplo)</span>
-                    <ul class="pricing-features">
-                        <li><i class="bi bi-check-circle-fill"></i> 13 dias de roteiro completo</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Festival das Lanternas (2 eventos!)</li>
-                        <li><i class="bi bi-check-circle-fill"></i> 2 passeios de barco privativo</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Santuário ético de elefantes</li>
-                    </ul>
-                    <button class="btn btn-gold btn-full" onclick="openModal('modal-reserva-tailandia')">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
-                </div>
-            </div>
+    <!-- Tailândia -->
+    <div class="pricing-card">
+        <div class="pricing-image">
+            <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/5/2025/09/23121520/lantern-festival-scaled-1.jpeg" alt="Tailândia">
+        </div>
+        <h3>Tailândia</h3>
+        <p class="pricing-subtitle">Experiência Completa • 13 dias</p>
+        <p class="pricing-dates"><i class="bi bi-calendar3"></i> 21/11 a 03/12/2026</p>
+        <div class="pricing-value">
+            <span class="currency">USD</span>
+            <span class="amount">3.990</span>
+        </div>
+        <span class="pricing-info">por pessoa (quarto duplo)</span>
+        <ul class="pricing-features">
+            <li><i class="bi bi-check-circle-fill"></i> 13 dias de roteiro completo</li>
+            <li><i class="bi bi-check-circle-fill"></i> Festival das Lanternas (2 eventos!)</li>
+            <li><i class="bi bi-check-circle-fill"></i> 2 passeios de barco privativo</li>
+            <li><i class="bi bi-check-circle-fill"></i> Santuário ético de elefantes</li>
+        </ul>
+        <button class="btn btn-gold btn-full" onclick="openModal('modal-reserva-tailandia')">Reservar Vaga <i class="bi bi-arrow-right"></i></button>
+    </div>
+</div>
 
             <!-- Pagamento e Garantia -->
             <div class="payment-wrapper">
@@ -2595,13 +3085,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <div class="logo-placeholder">MX</div>
-                        <div class="logo-text">
-                            <span class="brand">Mutua</span>
-                            <span class="tagline">Xperiences</span>
-                        </div>
-                    </a>
+                  <a href="#" class="logo">
+                    <img src="https://i.postimg.cc/TP39hxFs/1765563423015-019b13c6-99f2-700f-b24a-7f3981482981-removebg-preview.png" alt="Mutua Xperiences" class="logo-image">
+                        </a>
                     <p>Expedições exclusivas para quem busca o extraordinário. Viagens transformadoras em grupos de até 18 pessoas.</p>
                     <div class="footer-social">
                         <a href="https://instagram.com/mutuaxperiences" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
@@ -2634,14 +3120,8 @@
             <div class="footer-bottom">
                 <div class="footer-legal">
                     <!-- Cadastur -->
-                    <div class="cadastur-info">
-                        <!-- PLACEHOLDER LOGO CADASTUR - Substitua pela imagem real -->
-                        <!-- <img src="SUA-LOGO-CADASTUR.png" alt="Cadastur" class="cadastur-logo-img"> -->
-                        <div class="cadastur-logo">LOGO<br>CADASTUR</div>
-                        <div class="cadastur-text">
-                            <strong>Fazendo o Turismo Legal</strong>
-                            <span>Registro no Cadastur - Ministério do Turismo</span>
-                        </div>
+                     <div class="cadastur-info">
+                       <img src="https://i.postimg.cc/dVND99kM/Captura-de-tela-2025-12-12-142425.png" alt="Cadastur - Fazendo o Turismo Legal" class="cadastur-logo-img">
                     </div>
                     
                     <!-- Informações legais -->
