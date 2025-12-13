@@ -2253,6 +2253,24 @@
     0%, 100% { transform: scale(1); opacity: 1; }
     50% { transform: scale(1.1); opacity: 0.8; }
 }
+
+        /* ========== HOTEL DATES ========== */
+.hotel-dates {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 4px 10px;
+    background: rgba(28, 102, 172, 0.1);
+    color: var(--color-primary);
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+}
+
+.hotel-dates i {
+    font-size: 12px;
+}
     </style>
 </head>
 
@@ -3545,55 +3563,96 @@ Suporte 24hrs, melhores roteiros de viagem, excelente indicações de profission
     </div>
 
     <!-- Modal Hotéis Tailândia -->
-    <div class="modal" id="modal-hoteis-tailandia">
-        <div class="modal-overlay" onclick="closeModal('modal-hoteis-tailandia')"></div>
-        <div class="modal-box">
-            <button class="modal-close" onclick="closeModal('modal-hoteis-tailandia')"><i class="bi bi-x-lg"></i></button>
-            <div class="modal-header">
-                <h3>🇹🇭 Hotéis Tailândia</h3>
-                <p>Hospedagem 4-5 estrelas</p>
-            </div>
-            <div class="modal-body">
-                <div class="hotel-grid">
-                    <div class="hotel-item">
-                        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=150&h=120&fit=crop" alt="Hotel Bangkok">
-                        <div class="hotel-item-info">
-                            <h4>Bangkok</h4>
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p>Hotel 5 estrelas, central e confortável</p>
-                        </div>
-                    </div>
-                    <div class="hotel-item">
-                        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=150&h=120&fit=crop" alt="Hotel Chiang Mai">
-                        <div class="hotel-item-info">
-                            <h4>Chiang Mai</h4>
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p>Hotel charme no Old Town, ideal pro Festival</p>
-                        </div>
-                    </div>
-                    <div class="hotel-item">
-                        <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=150&h=120&fit=crop" alt="Hotel Phi Phi">
-                        <div class="hotel-item-info">
-                            <h4>Phi Phi Island</h4>
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p>Resort à beira da praia paradisíaca</p>
-                        </div>
-                    </div>
-                    <div class="hotel-item">
-                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=150&h=120&fit=crop" alt="Hotel Krabi">
-                        <div class="hotel-item-info">
-                            <h4>Ao Nang / Krabi</h4>
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p>Hotel completo, próximo às praias</p>
-                        </div>
+<div class="modal" id="modal-hoteis-tailandia">
+    <div class="modal-overlay" onclick="closeModal('modal-hoteis-tailandia')"></div>
+    <div class="modal-box modal-large">
+        <button class="modal-close" onclick="closeModal('modal-hoteis-tailandia')"><i class="bi bi-x-lg"></i></button>
+        <div class="modal-header">
+            <h3>🇹🇭 Hotéis Tailândia</h3>
+            <p>Hospedagem 4-5 estrelas • 21/11 a 04/12/2026</p>
+        </div>
+        <div class="modal-body">
+            <div class="hotel-grid">
+                
+                <!-- Bangkok (Início) -->
+                <div class="hotel-item">
+                    <img src="https://www.movenpickbangkoksukhumvit15.com/wp-content/uploads/sites/247/2021/10/Cover_1-e1656575352695.jpeg" alt="Movenpick Sukhumvit 15 Bangkok">
+                    <div class="hotel-item-info">
+                        <h4>Bangkok</h4>
+                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>Movenpick Sukhumvit 15 ou similar</p>
+                        <span class="hotel-dates"><i class="bi bi-calendar3"></i> 21 a 23/11</span>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-outline btn-full" onclick="closeModal('modal-hoteis-tailandia')">Fechar</button>
+                
+                <!-- Chiang Mai -->
+                <div class="hotel-item">
+                    <img src="https://cmor-by-andacura.chiangmai-hotels4u.com/data/Pictures/OriginalPhoto/17206/1720619/1720619573/picture-chiang-mai-cmor-by-recall-hotels-sha-extra-plus-42.JPEG" alt="CMOR Boutique Chiang Mai">
+                    <div class="hotel-item-info">
+                        <h4>Chiang Mai</h4>
+                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>CMOR Boutique by Andacura ou similar</p>
+                        <span class="hotel-dates"><i class="bi bi-calendar3"></i> 23 a 26/11</span>
+                    </div>
+                </div>
+                
+                <!-- Phuket -->
+                <div class="hotel-item">
+                    <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=150&h=120&fit=crop" alt="Graceland Resort Phuket">
+                    <div class="hotel-item-info">
+                        <h4>Phuket</h4>
+                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>Graceland Resort ou similar</p>
+                        <span class="hotel-dates"><i class="bi bi-calendar3"></i> 26 a 28/11</span>
+                    </div>
+                </div>
+                
+                <!-- Phi Phi Island -->
+                <div class="hotel-item">
+                    <img src="https://www.saiihotels.com/wp-content/uploads/2025/05/saii-phiphi-villa-oceanview-hillside-pool-villa-009.webp" alt="Saii Phi Phi Island Village">
+                    <div class="hotel-item-info">
+                        <h4>Phi Phi Island</h4>
+                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>Saii Phi Phi Island Village</p>
+                        <span class="hotel-dates"><i class="bi bi-calendar3"></i> 28/11 a 01/12</span>
+                    </div>
+                </div>
+                
+                <!-- Railay Beach -->
+                <div class="hotel-item">
+                    <img src="https://static51.com-hotel.com/uploads/hotel/68594/photo/railay-princess-resort-spa_15212127741.jpg" alt="Railay Princess Resort">
+                    <div class="hotel-item-info">
+                        <h4>Railay Beach</h4>
+                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>Railay Princess Resort & Spa</p>
+                        <span class="hotel-dates"><i class="bi bi-calendar3"></i> 01 a 03/12</span>
+                    </div>
+                </div>
+                
+                <!-- Bangkok (Final) -->
+                <div class="hotel-item">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/73/ca/3f/swimming-pool.jpg?w=900&h=-1&s=1" alt="Movenpick Sukhumvit 15 Bangkok">
+                    <div class="hotel-item-info">
+                        <h4>Bangkok (Despedida)</h4>
+                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>Movenpick Sukhumvit 15 ou similar</p>
+                        <span class="hotel-dates"><i class="bi bi-calendar3"></i> 03 a 04/12</span>
+                    </div>
+                </div>
+                
             </div>
         </div>
+        <div class="modal-footer">
+            <div class="hotels-info" style="margin-bottom: 16px;">
+                <i class="bi bi-info-circle"></i>
+                <p>Todos os hotéis incluem café da manhã. Quartos duplos com opção de individual.</p>
+            </div>
+            <button class="btn btn-gold btn-full" onclick="closeModal('modal-hoteis-tailandia'); openModal('modal-reserva-tailandia');">
+                Quero Reservar! <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
     </div>
+</div>
 
     <!-- Modal Reserva Guatemala -->
     <div class="modal" id="modal-reserva-guatemala">
